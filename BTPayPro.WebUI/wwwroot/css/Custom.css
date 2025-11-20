@@ -1,0 +1,314 @@
+﻿/* BTPayPro Custom Styles */
+
+/* Fixed Sidebar */
+.sidebar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adjust content wrapper to account for fixed sidebar */
+#content-wrapper {
+    margin-left: 14rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #content-wrapper {
+        margin-left: 0;
+    }
+}
+
+/* Sidebar content container - scrollable if needed */
+#accordionSidebar {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* BT Logo at bottom of sidebar */
+.sidebar-footer {
+    margin-top: auto;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#accordionSidebar .sidebar-footer {
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: auto;
+    padding: 0;
+}
+
+.sidebar-footer img {
+    max-width: 120px;
+    height: auto;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+    .sidebar-footer img:hover {
+        opacity: 1;
+    }
+
+/* Wallet Balance Indicator */
+.wallet-balance-indicator {
+    transition: all 0.3s ease;
+}
+
+    .wallet-balance-indicator:hover {
+        transform: scale(1.05);
+    }
+
+#walletBalanceDisplay {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Smooth update animation for balance */
+@keyframes balanceUpdate {
+    0% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.balance-updated {
+    animation: balanceUpdate 0.5s ease;
+}
+
+/* Profile Photo Upload */
+.btn-circle {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+    .btn-circle:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .btn-circle i {
+        font-size: 16px;
+    }
+
+/* ADMIN DASHBOARD - ULTRA COMPACT STYLING */
+/* Target the admin dashboard specifically */
+body[id="page-top"] .card.shadow.mb-4,
+body[id*="dashboard-admin"] .card.shadow.mb-4 {
+    margin-bottom: 0 !important;
+}
+
+body[id="page-top"] .row .col-xl-3.col-md-6.mb-4,
+body[id*="dashboard-admin"] .row .col-xl-3.col-md-6.mb-4 {
+    margin-bottom: 0 !important;
+}
+
+body[id="page-top"] .row .col-xl-8.col-lg-7,
+body[id*="dashboard-admin"] .row .col-xl-8.col-lg-7,
+body[id="page-top"] .row .col-xl-4.col-lg-5,
+body[id*="dashboard-admin"] .row .col-xl-4.col-lg-5 {
+    margin-bottom: 0 !important;
+}
+
+body[id="page-top"] .row .col-lg-6.mb-4,
+body[id*="dashboard-admin"] .row .col-lg-6.mb-4 {
+    margin-bottom: 0 !important;
+}
+
+body[id="page-top"] .col-6.mb-4,
+body[id*="dashboard-admin"] .col-6.mb-4 {
+    margin-bottom: 0 !important;
+}
+
+/* Card body padding - minimal */
+body[id="page-top"] .card-body,
+body[id*="dashboard-admin"] .card-body {
+    padding: 0.1rem !important;
+}
+
+    /* Quick actions - ultra compact */
+    body[id="page-top"] .card-body .row .col-6,
+    body[id*="dashboard-admin"] .card-body .row .col-6 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    body[id="page-top"] .card-body .row,
+    body[id*="dashboard-admin"] .card-body .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+/* Text elements - no margin */
+body[id="page-top"] .h5.mb-0.font-weight-bold.text-gray-800,
+body[id*="dashboard-admin"] .h5.mb-0.font-weight-bold.text-gray-800 {
+    margin-bottom: 0 !important;
+}
+
+body[id="page-top"] .text-xs.font-weight-bold.text-primary.text-uppercase.mb-1,
+body[id*="dashboard-admin"] .text-xs.font-weight-bold.text-primary.text-uppercase.mb-1 {
+    margin-bottom: 0 !important;
+}
+
+/* Card headers - minimal padding */
+body[id="page-top"] .card-header.py-3,
+body[id*="dashboard-admin"] .card-header.py-3 {
+    padding-top: 0.1rem !important;
+    padding-bottom: 0.1rem !important;
+}
+
+/* Table containers - no margin */
+body[id="page-top"] .table-responsive,
+body[id*="dashboard-admin"] .table-responsive {
+    margin-bottom: 0 !important;
+}
+
+/* Remove all gutters */
+body[id="page-top"] .row.no-gutters,
+body[id*="dashboard-admin"] .row.no-gutters {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+    body[id="page-top"] .row.no-gutters > [class*="col-"],
+    body[id*="dashboard-admin"] .row.no-gutters > [class*="col-"] {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+/* ULTRA COMPACT - Force override all spacing */
+body[id="page-top"] *,
+body[id*="dashboard-admin"] * {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Specific overrides for common Bootstrap classes */
+body[id="page-top"] .mb-4,
+body[id*="dashboard-admin"] .mb-4 {
+    margin-bottom: 0 !important;
+}
+
+body[id="page-top"] .py-2,
+body[id*="dashboard-admin"] .py-2 {
+    padding-top: 0.1rem !important;
+    padding-bottom: 0.1rem !important;
+}
+
+body[id="page-top"] .py-3,
+body[id*="dashboard-admin"] .py-3 {
+    padding-top: 0.1rem !important;
+    padding-bottom: 0.1rem !important;
+}
+
+/* Remove any default Bootstrap spacing that might be causing issues */
+body[id="page-top"] .card,
+body[id*="dashboard-admin"] .card {
+    margin-bottom: 0 !important;
+}
+
+body[id="page-top"] .row,
+body[id*="dashboard-admin"] .row {
+    margin-bottom: 0 !important;
+}
+
+/* Additional global compact styling for all dashboards */
+.card.shadow.mb-4 {
+    margin-bottom: 0 !important;
+}
+
+.row .col-xl-3.col-md-6.mb-4 {
+    margin-bottom: 0 !important;
+}
+
+.row .col-xl-8.col-lg-7,
+.row .col-xl-4.col-lg-5 {
+    margin-bottom: 0 !important;
+}
+
+.row .col-lg-6.mb-4 {
+    margin-bottom: 0 !important;
+}
+
+/* Zero padding for maximum compactness */
+.card-body {
+    padding: 0.1rem !important;
+}
+
+    /* Zero spacing in quick actions - maximum compactness */
+    .card-body .row .col-6 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .card-body .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+/* Zero spacing adjustments for maximum compactness */
+.h5.mb-0.font-weight-bold.text-gray-800 {
+    margin-bottom: 0 !important;
+}
+
+.text-xs.font-weight-bold.text-primary.text-uppercase.mb-1 {
+    margin-bottom: 0 !important;
+}
+
+.py-2 {
+    padding-top: 0.1rem !important;
+    padding-bottom: 0.1rem !important;
+}
+
+/* Zero spacing in card headers */
+.card-header.py-3 {
+    padding-top: 0.1rem !important;
+    padding-bottom: 0.1rem !important;
+}
+
+/* Zero spacing in table containers */
+.table-responsive {
+    margin-bottom: 0 !important;
+}
+
+/* Remove all gutters from rows */
+.row.no-gutters {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+    .row.no-gutters > [class*="col-"] {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }

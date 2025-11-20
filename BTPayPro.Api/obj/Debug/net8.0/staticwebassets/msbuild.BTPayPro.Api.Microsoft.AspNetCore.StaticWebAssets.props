@@ -1,0 +1,20 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\profiles\fb7c99a9-88df-45ba-b0b2-32c6a6862de6_8c93de9c-e51c-4627-b121-3c4cdd34a76c.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>BTPayPro.Api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/BTPayPro.Api</BasePath>
+      <RelativePath>uploads/profiles/fb7c99a9-88df-45ba-b0b2-32c6a6862de6_8c93de9c-e51c-4627-b121-3c4cdd34a76c.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\profiles\fb7c99a9-88df-45ba-b0b2-32c6a6862de6_8c93de9c-e51c-4627-b121-3c4cdd34a76c.png))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>

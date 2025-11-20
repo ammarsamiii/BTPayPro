@@ -1,0 +1,12 @@
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.ServiceDefaults\bin\Debug\net8.0\BTPayPro.ServiceDefaults.deps.json
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.ServiceDefaults\bin\Debug\net8.0\BTPayPro.ServiceDefaults.dll
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.ServiceDefaults\bin\Debug\net8.0\BTPayPro.ServiceDefaults.pdb
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.ServiceDefaults\obj\Debug\net8.0\BTPayPro.ServiceDefaults.csproj.AssemblyReference.cache
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.ServiceDefaults\obj\Debug\net8.0\BTPayPro.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.ServiceDefaults\obj\Debug\net8.0\BTPayPro.ServiceDefaults.AssemblyInfoInputs.cache
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.ServiceDefaults\obj\Debug\net8.0\BTPayPro.ServiceDefaults.AssemblyInfo.cs
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.ServiceDefaults\obj\Debug\net8.0\BTPayPro.ServiceDefaults.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.ServiceDefaults\obj\Debug\net8.0\BTPayPro.ServiceDefaults.dll
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.ServiceDefaults\obj\Debug\net8.0\refint\BTPayPro.ServiceDefaults.dll
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.ServiceDefaults\obj\Debug\net8.0\BTPayPro.ServiceDefaults.pdb
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.ServiceDefaults\obj\Debug\net8.0\ref\BTPayPro.ServiceDefaults.dll

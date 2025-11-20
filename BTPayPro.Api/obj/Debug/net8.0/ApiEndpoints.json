@@ -1,0 +1,853 @@
+[
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.UserLoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Domaine.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.AutmpayController",
+    "Method": "Upload",
+    "RelativePath": "api/Autmpay/upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.ComplaintController",
+    "Method": "CreateComplaint",
+    "RelativePath": "api/Complaint",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.ComplaintRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.ComplaintController",
+    "Method": "GetComplaint",
+    "RelativePath": "api/Complaint/{complaintId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "complaintId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BTPayPro.Api.Models.ComplaintDetailDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.ComplaintController",
+    "Method": "RespondToComplaint",
+    "RelativePath": "api/Complaint/{complaintId}/respond",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "complaintId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.ComplaintAdminResponseDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.ComplaintController",
+    "Method": "GetAllComplaints",
+    "RelativePath": "api/Complaint/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[BTPayPro.Api.Models.ComplaintDetailDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.ComplaintController",
+    "Method": "GetUserComplaints",
+    "RelativePath": "api/Complaint/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[BTPayPro.Api.Models.ComplaintDetailDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.CPMPayController",
+    "Method": "ParseCpmpayFile",
+    "RelativePath": "api/CPMPay/ParseCpmpayFile",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.PaymentController",
+    "Method": "ClictopayCallback",
+    "RelativePath": "api/Payment/callback",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.PaymentController",
+    "Method": "InitiatePayment",
+    "RelativePath": "api/Payment/initiate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BTPayPro.Api.Controllers.PaymentController\u002BInitiatePaymentRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.ProfileController",
+    "Method": "GetProfile",
+    "RelativePath": "api/Profile/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BTPayPro.Api.Models.ProfileResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.ProfileController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/Profile/{userId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.ProfileUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.ProfileController",
+    "Method": "UploadProfilePhoto",
+    "RelativePath": "api/Profile/{userId}/photo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "photo",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.ProfileController",
+    "Method": "Search",
+    "RelativePath": "api/Profile/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "q",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[BTPayPro.Api.Models.ProfileSearchDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.Transaction, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.TransactionRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.TransactionResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.ITransactionCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAll",
+    "RelativePath": "api/Transaction",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BTPayPro.Api.Models.TransactionResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.Transaction, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.TransactionRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.TransactionResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.ITransactionCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Add",
+    "RelativePath": "api/Transaction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.TransactionRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BTPayPro.Api.Models.TransactionResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.Transaction, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.TransactionRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.TransactionResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.ITransactionCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetById",
+    "RelativePath": "api/Transaction/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BTPayPro.Api.Models.TransactionResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.Transaction, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.TransactionRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.TransactionResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.ITransactionCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Update",
+    "RelativePath": "api/Transaction/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.TransactionRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.Transaction, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.TransactionRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.TransactionResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.ITransactionCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Delete",
+    "RelativePath": "api/Transaction/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.TransactionController",
+    "Method": "CreateTransaction",
+    "RelativePath": "api/Transaction/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.TransactionRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.TransactionController",
+    "Method": "GetTransactionDetails",
+    "RelativePath": "api/Transaction/details/{transactionId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "transactionId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BTPayPro.Api.Models.TransactionDetailDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.TransactionController",
+    "Method": "AcceptTransfer",
+    "RelativePath": "api/Transaction/transfer/{transactionId}/accept",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "transactionId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.TransactionAcceptDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.TransactionController",
+    "Method": "RequestTransfer",
+    "RelativePath": "api/Transaction/transfer/request",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.TransactionTransferRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.TransactionController",
+    "Method": "UpdateTransaction",
+    "RelativePath": "api/Transaction/update/{transactionId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "transactionId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.TransactionUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.TransactionController",
+    "Method": "GetUserTransactions",
+    "RelativePath": "api/Transaction/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[BTPayPro.Api.Models.TransactionDetailDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.User, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.UserRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.UserResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.IUserCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAll",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BTPayPro.Api.Models.UserResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.User, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.UserRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.UserResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.IUserCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Add",
+    "RelativePath": "api/User",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.UserRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BTPayPro.Api.Models.UserResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.User, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.UserRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.UserResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.IUserCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetById",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BTPayPro.Api.Models.UserResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.User, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.UserRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.UserResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.IUserCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Update",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.UserRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.User, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.UserRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.UserResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.IUserCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Delete",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.Wallet, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.WalletRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.WalletResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.IWalletCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAll",
+    "RelativePath": "api/Wallet",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BTPayPro.Api.Models.WalletResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.Wallet, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.WalletRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.WalletResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.IWalletCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Add",
+    "RelativePath": "api/Wallet",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.WalletRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BTPayPro.Api.Models.WalletResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.Wallet, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.WalletRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.WalletResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.IWalletCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetById",
+    "RelativePath": "api/Wallet/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BTPayPro.Api.Models.WalletResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.Wallet, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.WalletRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.WalletResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.IWalletCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Update",
+    "RelativePath": "api/Wallet/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.WalletRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.BaseCrudController\u00604[[BTPayPro.Domaine.Wallet, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.WalletRequestDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Api.Models.WalletResponseDto, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BTPayPro.Interfaces.IWalletCrudService, BTPayPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Delete",
+    "RelativePath": "api/Wallet/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.WalletController",
+    "Method": "GetWalletDetails",
+    "RelativePath": "api/Wallet/details/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BTPayPro.Api.Models.WalletDetailDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.WalletController",
+    "Method": "UpdateWallet",
+    "RelativePath": "api/Wallet/update/{walletId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "walletId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "BTPayPro.Api.Models.WalletUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.WalletController",
+    "Method": "GetByUserId",
+    "RelativePath": "api/Wallet/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BTPayPro.Api.Models.WalletResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BTPayPro.Api.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BTPayPro.Api.WeatherForecast, BTPayPro.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

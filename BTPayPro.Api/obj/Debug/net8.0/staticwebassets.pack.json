@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.Api\\wwwroot\\uploads\\profiles\\fb7c99a9-88df-45ba-b0b2-32c6a6862de6_8c93de9c-e51c-4627-b121-3c4cdd34a76c.png",
+      "PackagePath": "staticwebassets\\uploads\\profiles\\fb7c99a9-88df-45ba-b0b2-32c6a6862de6_8c93de9c-e51c-4627-b121-3c4cdd34a76c.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BTPayPro.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BTPayPro.Api.props",
+      "PackagePath": "build\\BTPayPro.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BTPayPro.Api.props",
+      "PackagePath": "buildMultiTargeting\\BTPayPro.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BTPayPro.Api.props",
+      "PackagePath": "buildTransitive\\BTPayPro.Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

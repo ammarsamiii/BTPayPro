@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Sdk Name="Aspire.AppHost.Sdk" Version="9.4.2" />
+<PropertyGroup>
+ <OutputType>Exe</OutputType>
+ <TargetFramework>net8.0</TargetFramework>
+ <ImplicitUsings>enable</ImplicitUsings>
+ <Nullable>enable</Nullable>
+ <IsAspireHost>true</IsAspireHost>
+ <UserSecretsId>4b0db835-97e7-4948-a27b-fb81265fba68</UserSecretsId>
+</PropertyGroup>
+<ItemGroup>
+ <PackageReference Include="Aspire.Hosting" Version="9.4.2" />
+ <PackageReference Include="Aspire.Hosting.AppHost" Version="9.4.2" />
+ <PackageReference Include="Aspire.Hosting.SqlServer" Version="9.4.2" />
+ <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+ <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.9">
+   <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+   <PrivateAssets>all</PrivateAssets>
+ </PackageReference>
+ <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.9" />
+</ItemGroup>
+<ItemGroup>
+
+
+	<ProjectReference Include="..\BTPayPro.Api\BTPayPro.Api.csproj" />
+
+
+	<ProjectReference Include="..\BTPayPro.ServiceDefaults\BTPayPro.ServiceDefaults.csproj" IsAspireProjectResource="false" />
+
+
+	<ProjectReference Include="..\BTPayPro.WebUI\BTPayPro.WebUI.csproj" />
+</ItemGroup>
+</Project>

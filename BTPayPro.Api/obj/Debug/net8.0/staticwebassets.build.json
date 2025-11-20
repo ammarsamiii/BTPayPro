@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "Hash": "UyC+fqNAKmoLsbOmJR7XeoqKi2kU+w5Fg4LghJLsKpg=",
+  "Source": "BTPayPro.Api",
+  "BasePath": "_content/BTPayPro.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro\\BTPayPro.csproj",
+      "Version": 2,
+      "Source": "BTPayPro",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BTPayPro.Api\\wwwroot",
+      "Source": "BTPayPro.Api",
+      "ContentRoot": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.Api\\wwwroot\\",
+      "BasePath": "_content/BTPayPro.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.Api\\wwwroot\\uploads\\profiles\\fb7c99a9-88df-45ba-b0b2-32c6a6862de6_8c93de9c-e51c-4627-b121-3c4cdd34a76c.png",
+      "SourceId": "BTPayPro.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.Api\\wwwroot\\",
+      "BasePath": "_content/BTPayPro.Api",
+      "RelativePath": "uploads/profiles/fb7c99a9-88df-45ba-b0b2-32c6a6862de6_8c93de9c-e51c-4627-b121-3c4cdd34a76c.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\profiles\\fb7c99a9-88df-45ba-b0b2-32c6a6862de6_8c93de9c-e51c-4627-b121-3c4cdd34a76c.png"
+    }
+  ]
+}

@@ -1,0 +1,794 @@
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BTPayPro - Merchant Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom BTPayPro styles -->
+    <link href="../css/custom.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard-vendor.html">
+                <div class="sidebar-brand-icon">
+                    <img src="../img/LogoBTPay.png" style="width:80px; height:90px; border-radius:10px;">
+                </div>
+                <div class="sidebar-brand-text mx-3">BTPay<span style="color:#00bfff;">Pro</span></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="dashboard-vendor.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Financial
+            </div>
+
+            <!-- Nav Item - Wallet -->
+            <li class="nav-item">
+                <a class="nav-link" href="../wallet.html">
+                    <i class="fas fa-fw fa-wallet"></i>
+                    <span>Wallet</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Transactions -->
+            <li class="nav-item">
+                <a class="nav-link" href="../transactions.html">
+                    <i class="fas fa-fw fa-exchange-alt"></i>
+                    <span>Transactions</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Support
+            </div>
+
+            <!-- Nav Item - Complaints -->
+            <li class="nav-item">
+                <a class="nav-link" href="../complaints.html">
+                    <i class="fas fa-fw fa-ticket-alt"></i>
+                    <span>Complaints</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+            <!-- BT Logo at Bottom -->
+            <li class="sidebar-footer">
+                <img src="../img/BTLogo.png" alt="BT Logo" style="max-width: 80%; height: auto; filter: none;">
+            </li>
+
+
+
+        </ul>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- User Type Badge -->
+                    <div class="d-none d-sm-inline-block mr-auto">
+                        <span class="badge badge-success badge-pill px-3 py-2" style="font-size: 0.875rem;">
+                            <i class="fas fa-store"></i> Merchant Dashboard
+                        </span>
+                    </div>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter" style="display: none;"></span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                 aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <!-- Notifications will be dynamically added here -->
+                                <div class="dropdown-item text-center text-gray-500">
+                                    No notifications
+                                </div>
+                                <a class="dropdown-item text-center small text-gray-500" href="#" onclick="BTPayProNotifications.markAllNotificationsAsRead(); return false;">Show All Notifications</a>
+                            </div>
+                        </li>
+
+                        <!-- Wallet Balance Indicator -->
+                        <li class="nav-item no-arrow mx-1">
+                            <a class="nav-link wallet-balance-indicator" href="#">
+                                <span class="badge badge-success badge-pill px-3 py-2" style="font-size: 0.95rem;">
+                                    <i class="fas fa-wallet"></i> <span id="walletBalanceDisplay">0.00 TND</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="userNameDisplay">User</span>
+                                <img class="img-profile rounded-circle"
+                                     src="../img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                 aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="/profile.html">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="/wallet.html">
+                                    <i class="fas fa-wallet fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Wallet
+                                </a>
+                               
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" onclick="handleLogout(); return false;">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Merchant Dashboard</h1>
+                        <a href="/transactions.html" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                            <i class="fas fa-exchange-alt fa-sm text-white-50"></i> View Transactions
+                        </a>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Wallet Balance Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Wallet Balance
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="dashboardWalletBalance">0.00 TND</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-wallet fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Transaction Limit Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Transaction Limit
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="dashboardTransactionLimit">0.00 TND</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-credit-card fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Total Transactions Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                Total
+                                                Transactions
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="dashboardTransactionCount">0</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-exchange-alt fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Transfers Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Pending Transfers
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="dashboardPendingTransfers">0</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clock fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+
+                    <div class="row">
+
+                        <!-- Transaction History -->
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Recent Transactions</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                             aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Actions:</div>
+                                            <a class="dropdown-item" href="/transactions.html">View All Transactions</a>
+                                            <a class="dropdown-item" href="/transactions.html#create">Create Transaction</a>
+                                            <a class="dropdown-item" href="/transactions.html#transfer">Request Transfer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="recentTransactionsTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Type</th>
+                                                    <th>Amount</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="recentTransactionsBody">
+                                                <tr>
+                                                    <td colspan="4" class="text-center">No transactions found</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Quick Actions</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6 mb-4">
+                                            <a href="/wallet.html" class="btn btn-success btn-circle btn-lg mx-auto d-block">
+                                                <i class="fas fa-wallet"></i>
+                                            </a>
+                                            <div class="text-center mt-2">
+                                                <small>Wallet</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-4">
+                                            <a href="/transactions.html#create" class="btn btn-primary btn-circle btn-lg mx-auto d-block">
+                                                <i class="fas fa-plus"></i>
+                                            </a>
+                                            <div class="text-center mt-2">
+                                                <small>New Transaction</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-4">
+                                            <a href="/transactions.html#transfer" class="btn btn-warning btn-circle btn-lg mx-auto d-block">
+                                                <i class="fas fa-exchange-alt"></i>
+                                            </a>
+                                            <div class="text-center mt-2">
+                                                <small>Transfer</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-4">
+                                            <a href="/complaints.html" class="btn btn-danger btn-circle btn-lg mx-auto d-block">
+                                                <i class="fas fa-ticket-alt"></i>
+                                            </a>
+                                            <div class="text-center mt-2">
+                                                <small>Complaints</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+                        <!-- Account Summary -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Account Summary</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p><strong>Name:</strong> <span id="summaryName">-</span></p>
+                                            <p><strong>Email:</strong> <span id="summaryEmail">-</span></p>
+                                            <p><strong>User ID:</strong> <span id="summaryUserId">-</span></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Account Status:</strong> <span class="badge badge-success">Active</span></p>
+                                            <p><strong>Member Since:</strong> <span id="memberSince">-</span></p>
+                                            <p><strong>Transactions:</strong> <span id="summaryTransactions">0 Transactions</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BTPayPro Features -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">BTPayPro Features</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li>Secure wallet management</li>
+                                        <li>Instant money transfers</li>
+                                        <li>Transaction history tracking</li>
+                                        <li>Multi-currency support</li>
+                                        <li>24/7 customer support</li>
+                                        <li>Accounting report generation</li>
+                                    </ul>
+                                    <div class="text-center mt-3">
+                                        <a href="/profile.html" class="btn btn-info btn-icon-split">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-info-circle"></i>
+                                            </span>
+                                            <span class="text">Learn More</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CPMPay Report Section -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Accounting Reports</h6>
+                                </div>
+                                <div class="card-body">
+                                    <p>Generate accounting reports based on your transaction files.</p>
+                                    <p class="text-muted">Note: You will receive transaction files from the CPMPay service. Upload those files here to generate your accounting reports.</p>
+
+                                    <div class="row">
+                                        <div class="col-md-12 mb-3">
+                                            <div class="card h-100">
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title">CPMPay Report</h5>
+                                                    <p class="card-text">Generate reports for vendor transactions using CPMPay service. Upload your CPMPay transaction file.</p>
+                                                    <button class="btn btn-success" onclick="generateCPMPayReport()">
+                                                        <i class="fas fa-file-upload"></i> Upload CPMPay File
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="reportStatus" class="mt-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; BTPayPro 2024</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary" onclick="handleLogout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="../vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../js/demo/chart-area-demo.js"></script>
+    <script src="../js/demo/chart-pie-demo.js"></script>
+
+    <!-- Configuration -->
+    <script src="../js/config.js"></script>
+
+    <!-- Authentication script -->
+    <script src="../js/auth.js"></script>
+
+    <!-- Notifications script -->
+    <script src="../js/notifications.js"></script>
+    <script>
+        // Initialize wallet balance and user info on page load
+        document.addEventListener('DOMContentLoaded', async function () {
+            // Protect this page - redirect to login if not authenticated
+            protectPage();
+
+            // Update user name display
+            const userNameElement = document.getElementById('userNameDisplay');
+            if (userNameElement) {
+                userNameElement.textContent = getUserName();
+            }
+
+            // Update profile photo
+            await fetchProfilePhoto();
+            updateTopbarProfilePhoto();
+
+            // Initialize wallet data (balance and transaction limit)
+            await initializeWalletData();
+
+            // Update dashboard with user data
+            updateDashboardData();
+        });
+
+        // Update dashboard with user data
+        function updateDashboardData() {
+            // Update account summary
+            document.getElementById('summaryName').textContent = getUserName() || 'User Name';
+            document.getElementById('summaryEmail').textContent = localStorage.getItem('userEmail') || 'user@example.com';
+            document.getElementById('summaryUserId').textContent = localStorage.getItem('userId') || 'N/A';
+
+            // Set member since to current date
+            const now = new Date();
+            document.getElementById('memberSince').textContent = now.toLocaleDateString();
+
+            // Update wallet data if available
+            const walletBalance = localStorage.getItem('walletBalance');
+            if (walletBalance) {
+                document.getElementById('dashboardWalletBalance').textContent = parseFloat(walletBalance).toFixed(2) + ' TND';
+                document.getElementById('walletBalanceDisplay').textContent = parseFloat(walletBalance).toFixed(2) + ' TND';
+            }
+
+            // Update transaction limit if available (will be fetched by initializeWalletData)
+            // The transaction limit is updated directly by initializeWalletData through updateTransactionLimitDisplay
+
+            // Load recent transactions
+            loadRecentTransactions();
+        }
+
+        // Load recent transactions
+        async function loadRecentTransactions() {
+            const userId = localStorage.getItem('userId');
+            if (!userId) return;
+
+            try {
+                const response = await authenticatedFetch(`${AppConfig.API_BASE_URL}/Transaction/user/${userId}`);
+
+                if (response && response.ok) {
+                    const transactions = await response.json();
+                    displayRecentTransactions(transactions);
+
+                    // Update transaction count
+                    document.getElementById('dashboardTransactionCount').textContent = transactions.length;
+                    document.getElementById('summaryTransactions').textContent = `${transactions.length} Transactions`;
+                }
+            } catch (error) {
+                console.error('Error loading recent transactions:', error);
+            }
+        }
+
+        // Display recent transactions
+        function displayRecentTransactions(transactions) {
+            const tbody = document.getElementById('recentTransactionsBody');
+
+            if (!transactions || transactions.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" class="text-center">No transactions found</td></tr>';
+                return;
+            }
+
+            // Show only the 5 most recent transactions
+            const recentTransactions = transactions.slice(0, 5);
+
+            tbody.innerHTML = recentTransactions.map(t => {
+                // Format date
+                const parts = t.transactionDate.split('-');
+                const formattedDate = parts.length === 3 ? `${parts[2]}/${parts[1]}/${parts[0]}` : t.transactionDate;
+
+                // Format amount with color coding
+                const amountClass = t.transactionAmount >= 0 ? 'text-success' : 'text-danger';
+                const formattedAmount = `${t.transactionAmount.toFixed(2)} TND`;
+
+                // Status badge
+                const statusMap = {
+                    'Created': 'secondary',
+                    'Pending': 'warning',
+                    'Completed': 'success',
+                    'Failed': 'danger',
+                    'Cancelled': 'dark'
+                };
+                const badgeClass = statusMap[t.status] || 'secondary';
+                const statusBadge = `<span class="badge badge-${badgeClass}">${t.status}</span>`;
+
+                return `
+                    <tr>
+                        <td>${formattedDate}</td>
+                        <td>${t.transactionType}</td>
+                        <td class="${amountClass}">${formattedAmount}</td>
+                        <td>${statusBadge}</td>
+                    </tr>`;
+            }).join('');
+        }
+
+        // Generate CPMPay Report (for Vendors)
+        async function generateCPMPayReport() {
+            const userType = getUserType();
+            if (userType !== 'Merchant') {
+                showReportStatus('CPMPay reports are only available for Vendors', 'warning');
+                return;
+            }
+
+            showReportStatus('Please upload your CPMPay file to generate report...', 'info');
+
+            // Create file input for CPMPay
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            // Allow any file type to be uploaded to support files without extensions
+            fileInput.accept = '';
+
+            fileInput.onchange = async (event) => {
+                const file = event.target.files[0];
+                if (!file) {
+                    showReportStatus('No file selected', 'warning');
+                    return;
+                }
+
+                showReportStatus('Uploading and processing CPMPay file...', 'info');
+
+                // Check if file is CSV or can be processed as CSV
+                console.log('Selected CPMPay file:', file.name, file.type);
+
+                try {
+                    // Create form data with proper content type
+                    const formData = new FormData();
+                    formData.append('file', file);
+
+                    showReportStatus('Processing file... Please wait.', 'info');
+
+                    // Log file details for debugging
+                    console.log('Selected CPMPay file:', file.name, file.type, file.size);
+
+                    // Use a direct fetch for file uploads to avoid Content-Type conflicts
+                    const token = getAuthToken();
+                    const response = await fetch(`${AppConfig.API_BASE_URL}/CPMPay/ParseCpmpayFile`, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+
+                    // Handle authentication errors
+                    if (response.status === 401) {
+                        localStorage.removeItem('authToken');
+                        window.location.href = '/login.html';
+                        return;
+                    }
+
+                    // Log response for debugging
+                    console.log('CPMPay API Response:', response);
+
+                    if (response && response.ok) {
+                        try {
+                            // Get the file content and create download
+                            const blob = await response.blob();
+
+                            // Ensure we're handling CSV content properly
+                            const csvBlob = new Blob([blob], { type: 'text/csv' });
+
+                            // Create a temporary URL for the blob
+                            const url = window.URL.createObjectURL(csvBlob);
+
+                            // Create a temporary anchor element
+                            const a = document.createElement('a');
+                            a.style.display = 'none';
+                            a.href = url;
+
+                            // Set the filename
+                            let filename = `CPMPay_Report_Vendor_${new Date().toISOString().slice(0, 10)}.csv`;
+                            const contentDisposition = response.headers.get('content-disposition');
+                            if (contentDisposition) {
+                                const filenameMatch = contentDisposition.match(/filename="?([^";]+)"?/);
+                                if (filenameMatch && filenameMatch[1]) {
+                                    filename = filenameMatch[1];
+                                }
+                            }
+                            a.download = filename;
+
+                            // Append to the document, click, and remove
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+
+                            // Clean up the URL object
+                            window.URL.revokeObjectURL(url);
+
+                            showReportStatus('CPMPay report generated and downloaded successfully!', 'success');
+                        } catch (downloadError) {
+                            console.error('Error during download:', downloadError);
+                            // Fallback: try to open in new tab
+                            try {
+                                const blob = await response.blob();
+                                const url = window.URL.createObjectURL(blob);
+                                window.open(url, '_blank');
+                                showReportStatus('CPMPay report opened in new tab. Please save it manually.', 'warning');
+                            } catch (fallbackError) {
+                                console.error('Fallback download also failed:', fallbackError);
+                                showReportStatus('Error generating CPMPay report. Please check console for details.', 'danger');
+                            }
+                        }
+                    } else {
+                        let errorText = 'Unknown error';
+                        try {
+                            errorText = await response.text();
+                        } catch (e) {
+                            errorText = `HTTP Error: ${response.status} ${response.statusText}`;
+                        }
+                        showReportStatus('Error generating CPMPay report: ' + errorText, 'danger');
+                    }
+                } catch (error) {
+                    console.error('Error generating CPMPay report:', error);
+                    showReportStatus('Error generating CPMPay report: ' + error.message, 'danger');
+                }
+            };
+
+            fileInput.click();
+        }
+
+        // Show report status message
+        function showReportStatus(message, type) {
+            const statusDiv = document.getElementById('reportStatus');
+            statusDiv.innerHTML = `
+                    <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                        ${message}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                `;
+        }
+    </script>
+
+</body>
+
+</html>

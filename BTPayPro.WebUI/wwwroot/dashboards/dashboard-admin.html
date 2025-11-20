@@ -1,0 +1,877 @@
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BTPayPro - Admin Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard-admin.html">
+                <div class="sidebar-brand-icon">
+                    <img src="../img/LogoBTPay.png" style="width:80px; height:90px; border-radius:10px;">
+                </div>
+                <div class="sidebar-brand-text mx-3">BTPay<span style="color:#00bfff;">Pro</span></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="dashboard-admin.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Management
+            </div>
+
+            <!-- Nav Item - Manage Users -->
+            <li class="nav-item">
+                <a class="nav-link" href="../admin-users.html">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Manage Users</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Manage Complaints -->
+            <li class="nav-item">
+                <a class="nav-link" href="../admin-complaints.html">
+                    <i class="fas fa-fw fa-headset"></i>
+                    <span>Manage Complaints</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+            
+            
+
+        </ul>
+
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- User Type Badge -->
+                    <div class="d-none d-sm-inline-block mr-auto">
+                        <span class="badge badge-danger badge-pill px-3 py-2" style="font-size: 0.875rem;">
+                            <i class="fas fa-user-shield"></i> Admin Dashboard
+                        </span>
+                    </div>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter" style="display: none;"></span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                 aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <!-- Notifications will be dynamically added here -->
+                                <div class="dropdown-item text-center text-gray-500">
+                                    No notifications
+                                </div>
+                                <a class="dropdown-item text-center small text-gray-500" href="#" onclick="BTPayProNotifications.markAllNotificationsAsRead(); return false;">Show All Notifications</a>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="userNameDisplay">Admin</span>
+                                <img class="img-profile rounded-circle"
+                                     src="../img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                 aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="/profile.html">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                               
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" onclick="handleLogout(); return false;">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Admin Dashboard</h1>
+                        <a href="/admin-complaints.html" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                            <i class="fas fa-ticket-alt fa-sm text-white-50"></i> Manage Complaints
+                        </a>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Total Users Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Total Users
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalUsers">0</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Total Transactions Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Total Transactions
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalTransactions">0</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-exchange-alt fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Complaints Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Pending
+                                                Complaints
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="pendingComplaints">0</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- System Status Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                System
+                                                Status
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><span class="badge badge-success">Online</span></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-server fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+
+                    <div class="row">
+
+                        <!-- Recent Complaints -->
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Recent Complaints</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                             aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Actions:</div>
+                                            <a class="dropdown-item" href="/admin-complaints.html">View All Complaints</a>
+                                            <a class="dropdown-item" href="/admin-complaints.html#respond">Respond to Complaints</a>
+                                            <a class="dropdown-item" href="/admin-complaints.html#reports">Generate Reports</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="recentComplaintsTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>User</th>
+                                                    <th>Channel</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="recentComplaintsBody">
+                                                <tr>
+                                                    <td colspan="4" class="text-center">No complaints found</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Quick Actions</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6 mb-4">
+                                            <a href="/admin-users.html" class="btn btn-warning btn-circle btn-lg mx-auto d-block">
+                                                <i class="fas fa-users"></i>
+                                            </a>
+                                            <div class="text-center mt-2">
+                                                <small>Users</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-4">
+                                            <a href="/admin-complaints.html" class="btn btn-info btn-circle btn-lg mx-auto d-block">
+                                                <i class="fas fa-ticket-alt"></i>
+                                            </a>
+                                            <div class="text-center mt-2">
+                                                <small>Complaints</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-4">
+                                            <a href="#" class="btn btn-success btn-circle btn-lg mx-auto d-block">
+                                                <i class="fas fa-chart-line"></i>
+                                            </a>
+                                            <div class="text-center mt-2">
+                                                <small>Reports</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-4">
+                                            <a href="#" class="btn btn-primary btn-circle btn-lg mx-auto d-block">
+                                                <i class="fas fa-cog"></i>
+                                            </a>
+                                           
+                                        </div>
+                                        <div class="col-6 mb-4">
+                                            <a href="#" class="btn btn-danger btn-circle btn-lg mx-auto d-block">
+                                                <i class="fas fa-shield-alt"></i>
+                                            </a>
+                                            <div class="text-center mt-2">
+                                                <small>Security</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-4">
+                                            <a href="#" class="btn btn-secondary btn-circle btn-lg mx-auto d-block">
+                                                <i class="fas fa-database"></i>
+                                            </a>
+                                            <div class="text-center mt-2">
+                                                <small>Backup</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- System Alerts -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">System Alerts</h6>
+                                    <div class="dropdown no-arrow">
+                                        <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" id="alertsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-bell"></i> View All
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="alertsDropdown">
+                                            <a class="dropdown-item" href="#">Critical Alerts</a>
+                                            <a class="dropdown-item" href="#">Warning Alerts</a>
+                                            <a class="dropdown-item" href="#">Info Alerts</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Clear All Alerts</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-1">
+                                                    <i class="fas fa-exclamation-triangle text-warning"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="text-gray-800 small font-weight-bold">High CPU Usage Detected</div>
+                                                    <div class="text-gray-600 small">CPU usage exceeded 80% for 5 minutes</div>
+                                                </div>
+                                                <div class="col-2 text-right">
+                                                    <span class="small text-gray-500">2m ago</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-1">
+                                                    <i class="fas fa-exclamation-circle text-danger"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="text-gray-800 small font-weight-bold">Database Connection Issue</div>
+                                                    <div class="text-gray-600 small">Intermittent connection failures detected</div>
+                                                </div>
+                                                <div class="col-2 text-right">
+                                                    <span class="small text-gray-500">15m ago</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-1">
+                                                    <i class="fas fa-info-circle text-info"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="text-gray-800 small font-weight-bold">New User Registration</div>
+                                                    <div class="text-gray-600 small">New user 'Alice Cooper' registered</div>
+                                                </div>
+                                                <div class="col-2 text-right">
+                                                    <span class="small text-gray-500">1h ago</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- System Overview -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">System Overview</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p><strong>Clients:</strong> <span id="clientCount">0</span></p>
+                                            <p><strong>Merchants:</strong> <span id="merchantCount">0</span></p>
+                                            <p><strong>Admins:</strong> <span id="adminCount">0</span></p>
+                                            <p><strong>Total Users:</strong> <span id="totalUsers">0</span></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Active Wallets:</strong> <span id="activeWallets">0</span></p>
+                                            <p><strong>Total Transactions:</strong> <span id="totalTransactions">0</span></p>
+                                            <p><strong>Pending Transfers:</strong> <span id="pendingTransfers">0</span></p>
+                                            <p><strong>System Uptime:</strong> <span id="systemUptime">-</span></p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <h6 class="font-weight-bold text-primary">Recent Activity</h6>
+                                    <div id="recentActivity">
+                                        <p class="text-muted">No recent activity</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent User Registrations -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Recent User Registrations</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="recentUsersTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Type</th>
+                                                    <th>Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="recentUsersBody">
+                                                <tr>
+                                                    <td colspan="4" class="text-center">Loading recent users...</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- BTPayPro Admin Features -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Admin Features</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li>User account management</li>
+                                        <li>Transaction monitoring</li>
+                                        <li>Complaint resolution</li>
+                                        <li>System performance tracking</li>
+                                        <li>Financial reporting</li>
+                                        <li>Security management</li>
+                                        <li>Access control and permissions</li>
+                                        <li>Audit logging</li>
+                                        <li>System backup and recovery</li>
+                                        <li>Real-time monitoring and alerts</li>
+                                    </ul>
+                                    <div class="text-center mt-3">
+                                        <a href="#" class="btn btn-info btn-icon-split">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-info-circle"></i>
+                                            </span>
+                                            <span class="text">System Documentation</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; BTPayPro 2024</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary" onclick="handleLogout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="../vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../js/demo/chart-area-demo.js"></script>
+    <script src="../js/demo/chart-pie-demo.js"></script>
+
+    <!-- Configuration -->
+    <script src="../js/config.js"></script>
+
+    <!-- Authentication script -->
+    <script src="../js/auth.js"></script>
+
+    <!-- Notifications script -->
+    <script src="../js/notifications.js"></script>
+    <script>
+        // Initialize user info on page load
+        document.addEventListener('DOMContentLoaded', async function () {
+            // Protect this page - redirect to login if not authenticated
+            protectPage();
+
+            // Update user name display
+            const userNameElement = document.getElementById('userNameDisplay');
+            if (userNameElement) {
+                userNameElement.textContent = getUserName();
+            }
+
+            // Update profile photo
+            await fetchProfilePhoto();
+            updateTopbarProfilePhoto();
+
+            // Update dashboard with real system data
+            await updateAdminDashboardData();
+        });
+
+        // Update admin dashboard with real system data
+        async function updateAdminDashboardData() {
+            try {
+                // Load system overview data from API
+                await loadSystemOverview();
+
+                // Load recent complaints
+                await loadRecentComplaints();
+
+                // Load recent user registrations
+                await loadRecentUserRegistrations();
+            } catch (error) {
+                console.error('Error updating dashboard data:', error);
+            }
+        }
+
+        // Load system overview data from API
+        async function loadSystemOverview() {
+            try {
+                let totalUsers = 0, clientCount = 0, merchantCount = 0, adminCount = 0;
+                let totalTransactions = 0;
+                let activeWallets = 0;
+                let pendingComplaints = 0;
+
+                // Try to fetch user statistics
+                try {
+                    const usersResponse = await authenticatedFetch(`${AppConfig.API_BASE_URL}/User`);
+                    if (usersResponse && usersResponse.ok) {
+                        const users = await usersResponse.json();
+                        totalUsers = users.length;
+
+                        // Count user types
+                        users.forEach(user => {
+                            const userType = user.userType || 'Unknown';
+                            switch (userType) {
+                                case 'Client':
+                                    clientCount++;
+                                    break;
+                                case 'Merchant':
+                                    merchantCount++;
+                                    break;
+                                case 'Admin':
+                                    adminCount++;
+                                    break;
+                            }
+                        });
+                    } else {
+                        console.log('User endpoint not available');
+                    }
+                } catch (error) {
+                    console.log('User endpoint not available:', error);
+                }
+
+                // Try to fetch transaction statistics
+                try {
+                    const transactionsResponse = await authenticatedFetch(`${AppConfig.API_BASE_URL}/Transaction`);
+                    if (transactionsResponse && transactionsResponse.ok) {
+                        const transactions = await transactionsResponse.json();
+                        totalTransactions = transactions.length;
+                    } else {
+                        console.log('Transaction endpoint not available');
+                    }
+                } catch (error) {
+                    console.log('Transaction endpoint not available:', error);
+                }
+
+                // Try to fetch wallet statistics
+                try {
+                    const walletsResponse = await authenticatedFetch(`${AppConfig.API_BASE_URL}/Wallet`);
+                    if (walletsResponse && walletsResponse.ok) {
+                        const wallets = await walletsResponse.json();
+                        activeWallets = wallets.length;
+                    } else {
+                        console.log('Wallet endpoint not available');
+                    }
+                } catch (error) {
+                    console.log('Wallet endpoint not available:', error);
+                }
+
+                // Try to fetch complaints statistics
+                try {
+                    const complaintsResponse = await authenticatedFetch(`${AppConfig.API_BASE_URL}/Complaint/all`);
+                    if (complaintsResponse && complaintsResponse.ok) {
+                        const complaints = await complaintsResponse.json();
+                        pendingComplaints = complaints.filter(c => c.complaintStatus === 'Pending').length;
+                    } else {
+                        console.log('Complaint/all endpoint not available');
+                    }
+                } catch (error) {
+                    console.log('Complaint/all endpoint not available:', error);
+                }
+
+                // Update user counts
+                document.getElementById('totalUsers').textContent = totalUsers || '0';
+                document.getElementById('clientCount').textContent = clientCount || '0';
+                document.getElementById('merchantCount').textContent = merchantCount || '0';
+                document.getElementById('adminCount').textContent = adminCount || '0';
+
+                // Update transaction data
+                document.getElementById('totalTransactions').textContent = totalTransactions || '0';
+                document.getElementById('activeWallets').textContent = activeWallets || '0';
+                document.getElementById('pendingTransfers').textContent = '0';
+
+                // Update complaints data
+                document.getElementById('pendingComplaints').textContent = pendingComplaints || '0';
+
+                // Set system uptime
+                document.getElementById('systemUptime').textContent = 'N/A';
+
+                // Load recent activity
+                loadRecentActivity();
+            } catch (error) {
+                console.error('Error loading system overview:', error);
+                // Show error state
+                showErrorState();
+            }
+        }
+
+        // Show error state when real data cannot be fetched
+        function showErrorState() {
+            // Update user counts
+            document.getElementById('totalUsers').textContent = '0';
+            document.getElementById('clientCount').textContent = '0';
+            document.getElementById('merchantCount').textContent = '0';
+            document.getElementById('adminCount').textContent = '0';
+
+            // Update transaction data
+            document.getElementById('totalTransactions').textContent = '0';
+            document.getElementById('activeWallets').textContent = '0';
+            document.getElementById('pendingTransfers').textContent = '0';
+
+            // Update complaints data
+            document.getElementById('pendingComplaints').textContent = '0';
+
+            // Set system uptime
+            document.getElementById('systemUptime').textContent = 'N/A';
+
+            // Load recent activity
+            loadRecentActivity();
+        }
+
+        // Load recent activity
+        function loadRecentActivity() {
+            const activityContainer = document.getElementById('recentActivity');
+
+            activityContainer.innerHTML = `
+                    <div class="text-center text-muted py-4">
+                        <i class="fas fa-info-circle fa-3x mb-3"></i>
+                        <p>Activity data not available</p>
+                    </div>
+                `;
+        }
+
+        // Load recent complaints
+        async function loadRecentComplaints() {
+            try {
+                const response = await authenticatedFetch(`${AppConfig.API_BASE_URL}/Complaint/all`);
+
+                if (response && response.ok) {
+                    const complaints = await response.json();
+
+                    // Sort by date and get the 5 most recent
+                    const recentComplaints = complaints
+                        .sort((a, b) => new Date(b.dateComplaint) - new Date(a.dateComplaint))
+                        .slice(0, 5);
+
+                    const tbody = document.getElementById('recentComplaintsBody');
+                    tbody.innerHTML = recentComplaints.map(c => {
+                        // Format date
+                        const dateObj = new Date(c.dateComplaint);
+                        const formattedDate = dateObj.toLocaleDateString();
+
+                        // Status badge
+                        const statusMap = {
+                            'Pending': 'warning',
+                            'In Progress': 'primary',
+                            'Done': 'success',
+                            'Closed': 'secondary'
+                        };
+                        const badgeClass = statusMap[c.complaintStatus] || 'secondary';
+                        const statusBadge = `<span class="badge badge-${badgeClass}">${c.complaintStatus}</span>`;
+
+                        return `
+                            <tr>
+                                <td>${formattedDate}</td>
+                                <td>${c.userName || 'Unknown'}</td>
+                                <td>${c.channel || 'Web'}</td>
+                                <td>${statusBadge}</td>
+                            </tr>`;
+                    }).join('');
+                } else {
+                    // Show error state when complaints cannot be loaded
+                    const tbody = document.getElementById('recentComplaintsBody');
+                    tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">Complaint data not available</td></tr>';
+                }
+            } catch (error) {
+                console.error('Error loading recent complaints:', error);
+                // Show error state when complaints cannot be loaded
+                const tbody = document.getElementById('recentComplaintsBody');
+                tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">Complaint data not available</td></tr>';
+            }
+        }
+
+        // Load recent user registrations
+        async function loadRecentUserRegistrations() {
+            try {
+                const response = await authenticatedFetch(`${AppConfig.API_BASE_URL}/User`);
+
+                if (response && response.ok) {
+                    const users = await response.json();
+
+                    // Sort by user ID (as a proxy for registration date) and get the 5 most recent
+                    const recentUsers = users
+                        .sort((a, b) => b.userId.localeCompare(a.userId))
+                        .slice(0, 5);
+
+                    const tbody = document.getElementById('recentUsersBody');
+                    tbody.innerHTML = recentUsers.map(user => {
+                        // Format user type
+                        const typeMap = {
+                            'Client': 'primary',
+                            'Merchant': 'warning',
+                            'Admin': 'danger'
+                        };
+                        const typeClass = typeMap[user.userType] || 'secondary';
+                        const typeBadge = `<span class="badge badge-${typeClass}">${user.userType}</span>`;
+
+                        return `
+                            <tr>
+                                <td>${user.firstName || ''} ${user.lastName || ''}</td>
+                                <td>${user.email || 'N/A'}</td>
+                                <td>${typeBadge}</td>
+                                <td>${user.userId ? user.userId.substring(0, 8) : 'N/A'}</td>
+                            </tr>`;
+                    }).join('');
+                } else {
+                    // Show error state when users cannot be loaded
+                    const tbody = document.getElementById('recentUsersBody');
+                    tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">User data not available</td></tr>';
+                }
+            } catch (error) {
+                console.error('Error loading recent user registrations:', error);
+                // Show error state when users cannot be loaded
+                const tbody = document.getElementById('recentUsersBody');
+                tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">User data not available</td></tr>';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
