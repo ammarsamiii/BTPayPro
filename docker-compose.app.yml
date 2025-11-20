@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: btpaypro-db
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong!Passw0rd
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - btpaypro_db_data:/var/opt/mssql
+
+  api:
+    build:
+      context: .
+      dockerfile: BTPayPro.Api/Dockerfile
+    container_name: btpaypro-api
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Server=db,1433;Database=BTPayPro;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;Encrypt=False;
+    ports:
+      - "5000:8080"
+
+  webui:
+    build:
+      context: .
+      dockerfile: BTPayPro.WebUI/Dockerfile
+    container_name: btpaypro-webui
+    depends_on:
+      - api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ApiBaseUrl=http://api:8080
+    ports:
+      - "5001:8080"
+
+volumes:
+  btpaypro_db_data:
