@@ -2,43 +2,36 @@ pipeline {
     agent any
 
     environment {
-        COMPOSE_FILE = "docker-compose.app.yml"  // adapte le nom si besoin
+        COMPOSE_FILE = "docker-compose.app.yml"
     }
 
     stages {
         stage('Checkout') {
             steps {
-                // Jenkins récupère le code DIRECTEMENT depuis GitHub
                 checkout scm
             }
         }
 
-        stage('Build .NET') {
+        stage('Build Docker Images') {
             steps {
-                sh 'dotnet --version'
-                sh 'dotnet restore'
-                sh 'dotnet build --configuration Release'
-                // Si tu as des tests :
-                // sh 'dotnet test'
+                sh "docker compose -f ${COMPOSE_FILE} build"
             }
         }
 
-        stage('Deploy with Docker Compose') {
+        stage('Deploy Containers') {
             steps {
-                // On arrête l'ancien déploiement s'il existe
                 sh "docker compose -f ${COMPOSE_FILE} down || true"
-                // On (re)build les images et on relance les conteneurs
-                sh "docker compose -f ${COMPOSE_FILE} up -d --build"
+                sh "docker compose -f ${COMPOSE_FILE} up -d"
             }
         }
     }
 
     post {
         success {
-            echo '✅ CI/CD OK : DB + API + WebUI déployés'
+            echo " Déploiement réussi !"
         }
         failure {
-            echo '❌ Le pipeline a échoué, va voir les logs Jenkins'
+            echo " Erreur dans le pipeline"
         }
     }
 }
