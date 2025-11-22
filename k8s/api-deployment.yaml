@@ -21,20 +21,8 @@ spec:
           env:
             - name: ASPNETCORE_ENVIRONMENT
               value: "Production"
-            # à adapter si tu pointes vers une vraie base plus tard
             - name: ConnectionStrings__DefaultConnection
-              value: "Server=btpaypro-db,1433;Database=BTPayPro;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;Encrypt=False;"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: btpaypro-api
-  namespace: btpaypro
-spec:
-  selector:
-    app: btpaypro-api
-  ports:
-    - port: 8080
-      targetPort: 8080
-      protocol: TCP
-  type: ClusterIP
+              valueFrom:
+                secretKeyRef:
+                  name: mssql-secret
+                  key: CONNECTION_STRING
