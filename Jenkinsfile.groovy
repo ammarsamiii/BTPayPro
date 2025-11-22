@@ -19,7 +19,7 @@ pipeline {
                 sh '''
                     docker run --rm \
                         -v $PWD:/src \
-                        -w /src/BTPayPro \
+                        -w /src/BTPayPro/BTPayPro \
                         mcr.microsoft.com/dotnet/sdk:8.0 \
                         dotnet test BTPayPro.sln --logger "trx"
                 '''
