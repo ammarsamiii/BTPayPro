@@ -2,11 +2,14 @@ pipeline {
     agent any
 
     environment {
-        // Fichier docker-compose pour ton application
+        // Fichier docker-compose pour builder les images
         COMPOSE_FILE = "docker-compose.app.yml"
 
         // ID du credential DockerHub dans Jenkins
         DOCKERHUB_CREDENTIALS = "dockerhub"
+
+        // Namespace Kubernetes de l'application
+        K8S_NAMESPACE = "btpaypro"
     }
 
     stages {
@@ -25,7 +28,7 @@ pipeline {
                     ls
                     ls BTPayPro.Tests || echo "BTPayPro.Tests not found"
 
-                    dotnet test BTPayPro.Tests/BTPayPro.Tests.csproj --logger \"trx\"
+                    dotnet test BTPayPro.Tests/BTPayPro.Tests.csproj --logger "trx"
                 '''
             }
         }
@@ -65,7 +68,7 @@ pipeline {
                     sh '''
                         echo "$DH_PASS" | docker login -u "$DH_USER" --password-stdin
 
-                        # Les images ont déjà été construites avec ces noms
+                        echo "📦 Docker images disponibles :"
                         docker images
 
                         docker push $DH_USER/btpaypro-api:latest
@@ -77,11 +80,23 @@ pipeline {
             }
         }
 
-        stage('Deploy Containers') {
+        stage('Deploy to MicroK8s') {
             steps {
-                echo "🚀 Deploying containers with docker-compose..."
-                sh "docker compose -f ${COMPOSE_FILE} down || true"
-                sh "docker compose -f ${COMPOSE_FILE} up -d"
+                echo "🚀 Deploying to MicroK8s cluster..."
+
+                // kubeconfig MicroK8s stocké comme "Secret file" dans Jenkins avec l'ID "microk8s-kubeconfig"
+                withCredentials([file(credentialsId: 'microk8s-kubeconfig', variable: 'KUBECONFIG_FILE')]) {
+                    sh '''
+                        echo "Using kubeconfig: $KUBECONFIG_FILE"
+                        kubectl --kubeconfig="$KUBECONFIG_FILE" get nodes
+
+                        # Création / mise à jour du namespace
+                        kubectl --kubeconfig="$KUBECONFIG_FILE" apply -f k8s/namespace.yaml || true
+
+                        # Déploiement de toute la stack dans le namespace
+                        kubectl --kubeconfig="$KUBECONFIG_FILE" apply -f k8s/ -n ''' + '${K8S_NAMESPACE}' + '''
+                    '''
+                }
             }
         }
     }
