@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     environment {
+        // Fichier docker-compose pour ton application
         COMPOSE_FILE = "docker-compose.app.yml"
-        DOCKERHUB_CREDENTIALS = 'dockerhub'     
-        DOCKERHUB_USER = 'samii99'          
-        IMAGE_API = "btpaypro-api"
-        IMAGE_WEB = "btpaypro-webui"
+
+        // ID du credential DockerHub dans Jenkins
+        DOCKERHUB_CREDENTIALS = "dockerhub"
     }
 
     stages {
@@ -19,13 +19,20 @@ pipeline {
 
         stage('Unit Tests') {
             steps {
-                echo "✔ Running unit tests..."
-                sh 'dotnet test BTPayPro.Tests/BTPayPro.Tests.csproj --logger trx'
+                echo "🧪 Running unit tests..."
+                sh '''
+                    echo "PWD: $(pwd)"
+                    ls
+                    ls BTPayPro.Tests || echo "BTPayPro.Tests not found"
+
+                    dotnet test BTPayPro.Tests/BTPayPro.Tests.csproj --logger \"trx\"
+                '''
             }
         }
 
         stage('SonarQube analysis') {
             steps {
+                echo "🔎 Running SonarQube analysis..."
                 withSonarQubeEnv('sonarqube') {
                     sh '''
                         sonar-scanner \
@@ -40,6 +47,7 @@ pipeline {
 
         stage('Build Docker Images') {
             steps {
+                echo "🐳 Building Docker images with docker-compose..."
                 sh "docker compose -f ${COMPOSE_FILE} build"
             }
         }
@@ -47,15 +55,21 @@ pipeline {
         stage('Push to DockerHub') {
             steps {
                 echo "📤 Pushing images to DockerHub..."
-                withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: DOCKERHUB_CREDENTIALS,
+                        usernameVariable: 'DH_USER',
+                        passwordVariable: 'DH_PASS'
+                    )
+                ]) {
                     sh '''
-                        echo "$PASS" | docker login -u "$USER" --password-stdin
+                        echo "$DH_PASS" | docker login -u "$DH_USER" --password-stdin
 
-                        docker tag btpaypro-api:latest $USER/btpaypro-api:latest
-                        docker tag btpaypro-webui:latest $USER/btpaypro-webui:latest
+                        # Les images ont déjà été construites avec ces noms
+                        docker images
 
-                        docker push $USER/btpaypro-api:latest
-                        docker push $USER/btpaypro-webui:latest
+                        docker push $DH_USER/btpaypro-api:latest
+                        docker push $DH_USER/btpaypro-webui:latest
 
                         docker logout
                     '''
@@ -65,6 +79,7 @@ pipeline {
 
         stage('Deploy Containers') {
             steps {
+                echo "🚀 Deploying containers with docker-compose..."
                 sh "docker compose -f ${COMPOSE_FILE} down || true"
                 sh "docker compose -f ${COMPOSE_FILE} up -d"
             }
@@ -73,10 +88,10 @@ pipeline {
 
     post {
         success {
-            echo "🚀 Pipeline completed successfully!"
+            echo "✅ Pipeline completed successfully !"
         }
         failure {
-            echo "❌ Pipeline failed. Check logs."
+            echo "❌ Pipeline failed, check the logs."
         }
     }
 }
