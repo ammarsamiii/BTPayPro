@@ -16,12 +16,31 @@ pipeline {
         stage('Unit Tests') {
             steps {
                 echo "🔍 Running unit tests..."
+
+                // Petit debug côté host (Jenkins)
+                sh '''
+                    echo "===== [HOST] Workspace info ====="
+                    echo "PWD: $PWD"
+                    echo "ls (workspace root):"
+                    ls
+                    echo "ls BTPayPro (if exists):"
+                    ls BTPayPro || echo "⚠️ No BTPayPro directory at workspace root"
+                    echo "================================="
+                '''
+
+                // Exécution des tests dans le container .NET
                 sh '''
                     docker run --rm \
                         -v $PWD:/src \
-                        -w /src/BTPayPro\
                         mcr.microsoft.com/dotnet/sdk:8.0 \
-                        dotnet test BTPayPro.sln --logger "trx"
+                        /bin/bash -lc "
+                            echo '===== [CONTAINER] ls /src =====';
+                            ls /src;
+                            echo '===== [CONTAINER] ls /src/BTPayPro =====';
+                            ls /src/BTPayPro || echo '⚠️ /src/BTPayPro not found';
+                            echo '===== [CONTAINER] dotnet test =====';
+                            dotnet test /src/BTPayPro/BTPayPro.sln --logger trx
+                        "
                 '''
             }
         }
