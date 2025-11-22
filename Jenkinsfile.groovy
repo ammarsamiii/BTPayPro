@@ -15,7 +15,7 @@ pipeline {
 
         stage('Unit Tests') {
             steps {
-                echo "▶️ Exécution des tests unitaires..."
+                echo "🔍 Running unit tests..."
                 sh '''
                     docker run --rm \
                         -v $PWD:/src \
