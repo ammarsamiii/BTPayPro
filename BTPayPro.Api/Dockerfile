@@ -1,22 +1,20 @@
-# ====== BUILD ======
+# ===== BUILD =====
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# On copie uniquement les .csproj nécessaires
-COPY BTPayPro/BTPayPro.csproj BTPayPro/
+# Copier uniquement les .csproj de l’API et des projets dépendants
 COPY BTPayPro.Api/BTPayPro.Api.csproj BTPayPro.Api/
-COPY BTPayPro.WebUI/BTPayPro.WebUI.csproj BTPayPro.WebUI/
+COPY BTPayPro/BTPayPro.csproj BTPayPro/
 
-# Restore sur le projet API
 RUN dotnet restore BTPayPro.Api/BTPayPro.Api.csproj
 
-# Maintenant on copie tout le code
-COPY . .
+# Copier uniquement le code API + dépendances
+COPY BTPayPro.Api/ BTPayPro.Api/
+COPY BTPayPro/ BTPayPro/
 
-# Publish de l'API
 RUN dotnet publish BTPayPro.Api/BTPayPro.Api.csproj -c Release -o /app/publish
 
-# ====== RUNTIME ======
+# ===== RUNTIME =====
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 
