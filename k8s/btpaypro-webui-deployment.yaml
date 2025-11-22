@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: btpaypro-webui
+  namespace: btpaypro
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: btpaypro-webui
+  template:
+    metadata:
+      labels:
+        app: btpaypro-webui
+    spec:
+      containers:
+        - name: webui
+          image: samii99/btpaypro-webui:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: "Production"
+            - name: ApiBaseUrl
+              value: "http://btpaypro-api.btpaypro.svc.cluster.local:8080"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: btpaypro-webui
+  namespace: btpaypro
+spec:
+  selector:
+    app: btpaypro-webui
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+  type: ClusterIP
