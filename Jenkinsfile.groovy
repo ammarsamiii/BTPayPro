@@ -17,7 +17,7 @@ pipeline {
                 withSonarQubeEnv('sonarqube') {
                     sh '''
                         sonar-scanner \
-                          -Dsonar.projectKey=btpaypro \
+                          -Dsonar.projectKey=BTPayPro \
                           -Dsonar.projectName=BTPayPro \
                           -Dsonar.sources=BTPayPro,BTPayPro.Api,BTPayPro.WebUI \
                           -Dsonar.sourceEncoding=UTF-8
