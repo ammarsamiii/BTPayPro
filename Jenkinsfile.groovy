@@ -21,7 +21,7 @@ pipeline {
                         -v $PWD:/src \
                         -w /src \
                         mcr.microsoft.com/dotnet/sdk:8.0 \
-                        dotnet test BTPayPro.Tests/BTPayPro.Tests.csproj --logger "trx"
+                        dotnet test BTPayPro.sln --logger "trx"
                 '''
             }
         }
