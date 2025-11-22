@@ -6,9 +6,23 @@ pipeline {
     }
 
     stages {
+
         stage('Checkout') {
             steps {
                 checkout scm
+            }
+        }
+
+        stage('Unit Tests') {
+            steps {
+                echo "▶️ Exécution des tests unitaires..."
+                sh '''
+                    docker run --rm \
+                        -v $PWD:/src \
+                        -w /src \
+                        mcr.microsoft.com/dotnet/sdk:8.0 \
+                        dotnet test BTPayPro.Tests/BTPayPro.Tests.csproj --logger "trx"
+                '''
             }
         }
 
