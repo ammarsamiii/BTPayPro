@@ -4,9 +4,10 @@ services:
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: btpaypro-db
+    restart: unless-stopped
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=YourStrong!Passw0rd
+      - SA_PASSWORD=YourStrong!Passw0rd   # à changer si besoin
       - MSSQL_PID=Express
     ports:
       - "1433:1433"
@@ -14,10 +15,13 @@ services:
       - btpaypro_db_data:/var/opt/mssql
 
   api:
+    
+    image: samii99/btpaypro-api:latest
     build:
       context: .
       dockerfile: BTPayPro.Api/Dockerfile
     container_name: btpaypro-api
+    restart: unless-stopped
     depends_on:
       - db
     environment:
@@ -27,10 +31,13 @@ services:
       - "5000:8080"
 
   webui:
+   
+    image: samii99/btpaypro-webui:latest
     build:
       context: .
       dockerfile: BTPayPro.WebUI/Dockerfile
     container_name: btpaypro-webui
+    restart: unless-stopped
     depends_on:
       - api
     environment:
