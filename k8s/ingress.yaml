@@ -4,17 +4,14 @@ metadata:
   name: btpaypro-ingress
   namespace: btpaypro
   annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   rules:
     - http:
         paths:
-          # Tout ce qui commence par /api/... va vers l'API
-          # /api/health   -> /health
-          # /api/swagger  -> /swagger
-          # /api/swagger/index.html -> /swagger/index.html
-          - path: /api(/|$)(.*)
+
+          # -------- API --------
+          - path: /api/?(.*)
             pathType: Prefix
             backend:
               service:
@@ -22,8 +19,8 @@ spec:
                 port:
                   number: 80
 
-          # Le reste (/) va vers le WebUI
-          - path: /
+          # -------- WEBUI --------
+          - path: /(.*)
             pathType: Prefix
             backend:
               service:
