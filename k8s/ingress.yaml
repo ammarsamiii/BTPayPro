@@ -3,20 +3,24 @@ kind: Ingress
 metadata:
   name: btpaypro-ingress
   namespace: btpaypro
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   rules:
     - http:
         paths:
-         
-          - path: /api
+
+          # -------- API --------
+          - path: /api/?(.*)
             pathType: Prefix
             backend:
               service:
                 name: btpaypro-api
                 port:
                   number: 80
-          
-          - path: /
+
+          # -------- WEBUI --------
+          - path: /(.*)
             pathType: Prefix
             backend:
               service:
