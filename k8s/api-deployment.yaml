@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: btpaypro-api
   namespace: btpaypro
+  labels:
+    app: btpaypro-api
 spec:
   replicas: 1
   selector:
@@ -16,8 +18,10 @@ spec:
       containers:
         - name: api
           image: samii99/btpaypro-api:latest
+          imagePullPolicy: Always   # toujours tirer la dernière image pushée par Jenkins
           ports:
-            - containerPort: 8080
+            - name: http
+              containerPort: 8080
           env:
             - name: ASPNETCORE_ENVIRONMENT
               value: "Production"
@@ -26,3 +30,22 @@ spec:
                 secretKeyRef:
                   name: mssql-secret
                   key: CONNECTION_STRING
+
+          # ✅ Probes basées sur ton endpoint /api/health (que tu as déjà testé en 200)
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 30
+            timeoutSeconds: 2
+            failureThreshold: 3
