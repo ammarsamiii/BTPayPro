@@ -15,12 +15,15 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Prometheus; // 👈 pour Prometheus
 using System.Text;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // 🔹 Connexion EF Core
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 builder.Services.Configure<AutmpayFileParser>(
     builder.Configuration.GetSection("FileParserSettings"));
 builder.Services.Configure<CPMPayParser>(
@@ -43,10 +46,14 @@ builder.Services.AddScoped<FileHeaderRecord>();
 builder.Services.AddScoped<FileDetailRecord>();
 builder.Services.AddScoped<FileTrailerRecord>();
 builder.Services.AddScoped<CPMPayReportGenerator>();
+
 // 1. Configure Clictopay Settings
 builder.Services.Configure<ClictopaySettings>(builder.Configuration.GetSection(ClictopaySettings.SectionName));
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// ⚠️ Cette ligne faisait doublon avec la première AddDbContext, on la supprime
+// builder.Services.AddDbContext<AppDbContext>(options =>
+//     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 // 2. Register Simulated Services (Replace with real DB/EF Core services in production)
 builder.Services.AddScoped(typeof(IRepositories<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
@@ -57,14 +64,11 @@ builder.Services.AddScoped<ITransactionCrudService, TransactionCrudService>();
 builder.Services.AddScoped<IUserCrudService, UserCrudService>();
 builder.Services.AddScoped<IWalletCrudService, WalletCrudService>();
 
-
-
 // 3. Register Clictopay HTTP Client and Client Implementation
 builder.Services.AddHttpClient<IPaymentGatewayClient, ClictopayClient>();
 
 // 4. Register Payment Service
 builder.Services.AddScoped<IPaymentService, PaymentService>();
-
 
 // 🔹 Authentification JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -78,14 +82,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true,
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
         };
     });
 builder.Services.AddAuthorization();
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -104,29 +109,50 @@ builder.Services.AddCors(options =>
                       });
 });
 
+// 🔹 HealthChecks pour /health et /api/health
+builder.Services.AddHealthChecks();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// ===============================
+//  PIPELINE HTTP (MIDDLEWARE)
+// ===============================
+
+// Swagger
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// Routing doit être AVANT UseHttpMetrics / Auth / CORS
 app.UseRouting();
-if (app.Environment.IsDevelopment())
-{
-    // Disable HTTPS redirect in development to avoid CORS preflight issues
-}
-else
+
+// 🔹 Prometheus : metrics sur toutes les requêtes HTTP
+app.UseHttpMetrics();
+
+// HTTPS redirection seulement hors dev
+if (!app.Environment.IsDevelopment())
 {
     app.UseHttpsRedirection();
 }
+
 app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthentication();
 app.UseAuthorization();
 
+// ===============================
+//          ENDPOINTS
+// ===============================
 app.MapControllers();
 
-app.Run();
+// 🔹 Endpoints de santé (pour K8s, ingress, etc.)
+app.MapHealthChecks("/health");
+app.MapHealthChecks("/api/health");   // pour que /api/health marche même sans rewrite
 
+// 🔹 Endpoints de métriques Prometheus
+app.MapMetrics("/metrics");
+app.MapMetrics("/api/metrics");       // pour pouvoir utiliser /api/metrics via l’ingress
+
+app.Run();
