@@ -1,4 +1,4 @@
-﻿using BTPayPro; // ton projet principal (qui contient DbContext & services)
+using BTPayPro; // ton projet principal (qui contient DbContext & services)
 using BTPayPro.Api.Models;
 using BTPayPro.Autmpay.Parsers;
 using BTPayPro.Autmpay.Reports;
