@@ -3,11 +3,13 @@ kind: Service
 metadata:
   name: btpaypro-api
   namespace: btpaypro
+  labels:
+    app: btpaypro-api
 spec:
   type: ClusterIP
   selector:
     app: btpaypro-api
   ports:
     - name: http
-      port: 80
-      targetPort: 8080
+      port: 80        # port vu dans le cluster
+      targetPort: 8080  # port du container (et nommé "http" dans le Deployment)
