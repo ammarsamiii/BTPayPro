@@ -161,6 +161,10 @@
       "PackagePath": "staticwebassets\\js\\login.js"
     },
     {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\js\\notifications.js",
+      "PackagePath": "staticwebassets\\js\\notifications.js"
+    },
+    {
       "Id": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\js\\sb-admin-2.js",
       "PackagePath": "staticwebassets\\js\\sb-admin-2.js"
     },
@@ -289,8 +293,8 @@
       "PackagePath": "staticwebassets\\uploads\\profiles\\c2e12db8-4eb5-46a7-9fcc-8326c4c37460_555171d1-2da5-4768-9645-8433f8352ab4.png"
     },
     {
-      "Id": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\uploads\\profiles\\fb7c99a9-88df-45ba-b0b2-32c6a6862de6_415581e4-4470-4ded-bb15-d5aa700c939a.png",
-      "PackagePath": "staticwebassets\\uploads\\profiles\\fb7c99a9-88df-45ba-b0b2-32c6a6862de6_415581e4-4470-4ded-bb15-d5aa700c939a.png"
+      "Id": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\uploads\\profiles\\fb7c99a9-88df-45ba-b0b2-32c6a6862de6_97031b38-dd9a-447f-b3c3-4d3b49e441b5.png",
+      "PackagePath": "staticwebassets\\uploads\\profiles\\fb7c99a9-88df-45ba-b0b2-32c6a6862de6_97031b38-dd9a-447f-b3c3-4d3b49e441b5.png"
     },
     {
       "Id": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\uploads\\profiles\\ff5d42bb-e32a-44fd-8d37-b5e202e56308_e360d3f5-d813-4c23-8aac-473043d3749c.jpg",

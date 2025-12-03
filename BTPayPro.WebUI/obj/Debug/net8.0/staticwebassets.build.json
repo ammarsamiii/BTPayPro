@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DJsAVHSTUquVRkBW4k8BVwbfRVuWV20LZzdBL+7pWqw=",
+  "Hash": "XDdXx44rTckkB2raikHeQo9igz5+hIH2+cQ7+oEc05s=",
   "Source": "BTPayPro.WebUI",
   "BasePath": "_content/BTPayPro.WebUI",
   "Mode": "Default",
@@ -642,6 +642,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\login.js"
+    },
+    {
+      "Identity": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\js\\notifications.js",
+      "SourceId": "BTPayPro.WebUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\",
+      "BasePath": "_content/BTPayPro.WebUI",
+      "RelativePath": "js/notifications.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\notifications.js"
     },
     {
       "Identity": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\js\\Profile.js",
@@ -1366,12 +1385,12 @@
       "OriginalItemSpec": "wwwroot\\uploads\\profiles\\c2e12db8-4eb5-46a7-9fcc-8326c4c37460_555171d1-2da5-4768-9645-8433f8352ab4.png"
     },
     {
-      "Identity": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\uploads\\profiles\\fb7c99a9-88df-45ba-b0b2-32c6a6862de6_415581e4-4470-4ded-bb15-d5aa700c939a.png",
+      "Identity": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\uploads\\profiles\\fb7c99a9-88df-45ba-b0b2-32c6a6862de6_97031b38-dd9a-447f-b3c3-4d3b49e441b5.png",
       "SourceId": "BTPayPro.WebUI",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\",
       "BasePath": "_content/BTPayPro.WebUI",
-      "RelativePath": "uploads/profiles/fb7c99a9-88df-45ba-b0b2-32c6a6862de6_415581e4-4470-4ded-bb15-d5aa700c939a.png",
+      "RelativePath": "uploads/profiles/fb7c99a9-88df-45ba-b0b2-32c6a6862de6_97031b38-dd9a-447f-b3c3-4d3b49e441b5.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1382,7 +1401,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\profiles\\fb7c99a9-88df-45ba-b0b2-32c6a6862de6_415581e4-4470-4ded-bb15-d5aa700c939a.png"
+      "OriginalItemSpec": "wwwroot\\uploads\\profiles\\fb7c99a9-88df-45ba-b0b2-32c6a6862de6_97031b38-dd9a-447f-b3c3-4d3b49e441b5.png"
     },
     {
       "Identity": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\uploads\\profiles\\ff5d42bb-e32a-44fd-8d37-b5e202e56308_e360d3f5-d813-4c23-8aac-473043d3749c.jpg",

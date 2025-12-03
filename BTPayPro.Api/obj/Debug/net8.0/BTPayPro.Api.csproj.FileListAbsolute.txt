@@ -64,6 +64,8 @@ C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\bin\Debug\net8.0\Microsof
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\bin\Debug\net8.0\Prometheus.NetStandard.dll
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\bin\Debug\net8.0\Prometheus.AspNetCore.dll
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -174,6 +176,7 @@ C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\obj\Debug\net8.0\BTPayPro
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\obj\Debug\net8.0\BTPayPro.Api.csproj.CoreCompileInputs.cache
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\obj\Debug\net8.0\BTPayPro.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\obj\Debug\net8.0\BTPayPro.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\obj\Debug\net8.0\BTPayPro.Api.sourcelink.json
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.Api\obj\Debug\net8.0\staticwebassets\msbuild.BTPayPro.Api.Microsoft.AspNetCore.StaticWebAssets.props

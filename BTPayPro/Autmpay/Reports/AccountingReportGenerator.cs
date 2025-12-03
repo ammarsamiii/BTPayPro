@@ -16,7 +16,7 @@ namespace BTPayPro.Autmpay.Reports
             sb.AppendLine("# Rapport Comptable AUTMPAY\n");
             sb.AppendLine("Ce rapport présente les détails des transactions AUTMPAY.\n");
 
-            sb.AppendLine("| Numéro de Séquence | Code Opération | Date Traitement | Montant Autorisé | Montant Règle | Nom Marchand | Ville Marchand | Statut Opération |");
+            sb.AppendLine("| Sequence Number | Operation Code  | Treatment Date  | Authorized Amount | Settled Amount | Merchant Name | Merchant City | Operation Status  |");
             sb.AppendLine("|--------------------|----------------|-----------------|------------------|---------------|--------------|----------------|------------------|");
 
             foreach (var record in detailRecords)
@@ -29,7 +29,7 @@ namespace BTPayPro.Autmpay.Reports
 
         private string FormatAmount(string amountString)
         {
-            if (string.IsNullOrEmpty(amountString)) return "0.00";
+            if (string.IsNullOrEmpty(amountString)) return "0.000";
             // Assuming the amount is a fixed-point number with 3 decimal places (V9(3) from spec)
             if (amountString.Length <= 3) return "0." + amountString.PadLeft(3, '0');
             return amountString.Insert(amountString.Length - 3, ".");

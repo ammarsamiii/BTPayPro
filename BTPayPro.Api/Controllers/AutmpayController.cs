@@ -12,6 +12,7 @@ namespace BTPayPro.Api.Controllers
         private readonly AutmpayFileParser _parser;
         private readonly AccountingReportGenerator _reporter;
 
+
         public AutmpayController(AutmpayFileParser parser, AccountingReportGenerator reporter)
         {
             _parser = parser;
@@ -26,6 +27,9 @@ namespace BTPayPro.Api.Controllers
             using var stream = file.OpenReadStream();
             var records = await _parser.ParseFile(stream, ct);
             var csv = _reporter.GenerateMarkdownReport(records.Details);
+
+            //add integration database here
+
             return File(Encoding.UTF8.GetBytes(csv), "text/csv", "AutmpayReport.csv");
         }
     }

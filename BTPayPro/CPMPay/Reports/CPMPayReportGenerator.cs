@@ -32,7 +32,7 @@ namespace BTPayPro.CPMPay.Reports
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("# Rapport Comptable CPMPAY\n");
             sb.AppendLine("Ce rapport présente les détails des transactions CPMPAY.\n");
-            sb.AppendLine("| Numéro de Séquence | Code Opération | Date Traitement | Montant Autorisé | Montant Règle | Nom Marchand | Ville Marchand | Statut Opération |");
+            sb.AppendLine("| Sequence Number | Operation Code  | Treatment Date  | Authorized Amount | Settled Amount | Merchant Name | Merchant City | Operation Status  |");
             sb.AppendLine("|--------------------|----------------|-----------------|------------------|---------------|--------------|----------------|------------------|");
 
             foreach (var record in detailRecords)

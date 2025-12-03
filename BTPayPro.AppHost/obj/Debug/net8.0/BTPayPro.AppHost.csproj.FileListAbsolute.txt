@@ -278,6 +278,7 @@ C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.AppHost\obj\Debug\net8.0\BTPa
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.AppHost\obj\Debug\net8.0\Aspire\references\BTPayPro_Api.ProjectMetadata.g.cs
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.AppHost\obj\Debug\net8.0\Aspire\references\BTPayPro_WebUI.ProjectMetadata.g.cs
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.AppHost\obj\Debug\net8.0\Aspire\references\_AppHost.ProjectMetadata.g.cs
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.AppHost\obj\Debug\net8.0\BTPayPro.AppHost.sourcelink.json
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.AppHost\obj\Debug\net8.0\BTPayPro.0E83B9CA.Up2Date
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.AppHost\obj\Debug\net8.0\BTPayPro.AppHost.dll
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.AppHost\obj\Debug\net8.0\refint\BTPayPro.AppHost.dll

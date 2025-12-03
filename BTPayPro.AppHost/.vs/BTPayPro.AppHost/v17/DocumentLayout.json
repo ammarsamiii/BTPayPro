@@ -3,10 +3,13 @@
   "WorkspaceRootPath": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.AppHost\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A3973A2-D7F5-AC76-C8FE-8E72112F0ABA}|..\\BTPayPro\\BTPayPro.csproj|c:\\users\\asus\\source\\repos\\btpayproaspire\\btpaypro\\domaine\\complaint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{71C7B65A-1A30-D743-529E-7665631AF31B}|..\\BTPayPro.WebUI\\BTPayPro.WebUI.csproj|c:\\users\\asus\\source\\repos\\btpayproaspire\\btpaypro.webui\\wwwroot\\admin-users.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A3973A2-D7F5-AC76-C8FE-8E72112F0ABA}|..\\BTPayPro\\BTPayPro.csproj|c:\\users\\asus\\source\\repos\\btpayproaspire\\btpaypro\\domaine\\wallet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{71C7B65A-1A30-D743-529E-7665631AF31B}|..\\BTPayPro.WebUI\\BTPayPro.WebUI.csproj|c:\\users\\asus\\source\\repos\\btpayproaspire\\btpaypro.webui\\wwwroot\\dashboards\\dashboard-admin.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71C7B65A-1A30-D743-529E-7665631AF31B}|..\\BTPayPro.WebUI\\BTPayPro.WebUI.csproj|c:\\users\\asus\\source\\repos\\btpayproaspire\\btpaypro.webui\\wwwroot\\js\\admin-users.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,27 +24,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Complaint.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro\\Domaine\\Complaint.cs",
-              "RelativeDocumentMoniker": "..\\BTPayPro\\Domaine\\Complaint.cs",
-              "ToolTip": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro\\Domaine\\Complaint.cs",
-              "RelativeToolTip": "..\\BTPayPro\\Domaine\\Complaint.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwBcAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T13:56:57.816Z",
+              "Title": "admin-users.html",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\admin-users.html",
+              "RelativeDocumentMoniker": "..\\BTPayPro.WebUI\\wwwroot\\admin-users.html",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\admin-users.html",
+              "RelativeToolTip": "..\\BTPayPro.WebUI\\wwwroot\\admin-users.html",
+              "ViewState": "AgIAACEBAAAAAAAAAADwv0ABAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-03T13:52:57.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "admin-users.js",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\js\\admin-users.js",
+              "RelativeDocumentMoniker": "..\\BTPayPro.WebUI\\wwwroot\\js\\admin-users.js",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\js\\admin-users.js",
+              "RelativeToolTip": "..\\BTPayPro.WebUI\\wwwroot\\js\\admin-users.js",
+              "ViewState": "AgIAADgBAAAAAAAAAAAgwFABAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-03T13:43:30.391Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Wallet.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro\\Domaine\\Wallet.cs",
-              "RelativeDocumentMoniker": "..\\BTPayPro\\Domaine\\Wallet.cs",
-              "ToolTip": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro\\Domaine\\Wallet.cs",
-              "RelativeToolTip": "..\\BTPayPro\\Domaine\\Wallet.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAA0wB0AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T13:56:00.421Z"
+              "Title": "dashboard-admin.html",
+              "DocumentMoniker": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\dashboards\\dashboard-admin.html",
+              "RelativeDocumentMoniker": "..\\BTPayPro.WebUI\\wwwroot\\dashboards\\dashboard-admin.html",
+              "ToolTip": "C:\\Users\\Asus\\source\\repos\\BTPayProAspire\\BTPayPro.WebUI\\wwwroot\\dashboards\\dashboard-admin.html",
+              "RelativeToolTip": "..\\BTPayPro.WebUI\\wwwroot\\dashboards\\dashboard-admin.html",
+              "ViewState": "AgIAAEIEAAAAAAAAAADwv1sEAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-03T13:24:34.531Z",
+              "EditorCaption": ""
             }
           ]
         }

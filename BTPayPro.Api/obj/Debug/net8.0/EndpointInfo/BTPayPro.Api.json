@@ -14,17 +14,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserRegistrationDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserRegistrationDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserRegistrationDto"
               }
             }
           }
@@ -1449,114 +1449,10 @@
           }
         }
       }
-    },
-    "/WeatherForecast": {
-      "get": {
-        "tags": [
-          "WeatherForecast"
-        ],
-        "operationId": "GetWeatherForecast",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components": {
     "schemas": {
-      "Accounting": {
-        "type": "object",
-        "properties": {
-          "accountId": {
-            "type": "string",
-            "nullable": true
-          },
-          "monetique": {
-            "type": "string",
-            "format": "byte",
-            "nullable": true
-          },
-          "monetiqueContentType": {
-            "maxLength": 50,
-            "type": "string",
-            "nullable": true
-          },
-          "wallet": {
-            "$ref": "#/components/schemas/Wallet"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Complaint": {
-        "type": "object",
-        "properties": {
-          "complaintId": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "dateComplaint": {
-            "type": "string",
-            "format": "date"
-          },
-          "complaintStatus": {
-            "type": "string",
-            "nullable": true
-          },
-          "channel": {
-            "type": "string",
-            "nullable": true
-          },
-          "adminResponse": {
-            "type": "string",
-            "nullable": true
-          },
-          "responseDate": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "userId": {
-            "type": "string",
-            "nullable": true
-          },
-          "user": {
-            "$ref": "#/components/schemas/User"
-          }
-        },
-        "additionalProperties": false
-      },
       "ComplaintAdminResponseDto": {
         "type": "object",
         "properties": {
@@ -1732,47 +1628,6 @@
         },
         "additionalProperties": false
       },
-      "Transaction": {
-        "type": "object",
-        "properties": {
-          "transactionId": {
-            "type": "string",
-            "nullable": true
-          },
-          "transactionType": {
-            "type": "string",
-            "nullable": true
-          },
-          "transactionAmount": {
-            "type": "number",
-            "format": "double"
-          },
-          "transactionDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "status": {
-            "type": "string",
-            "nullable": true
-          },
-          "comission": {
-            "type": "number",
-            "format": "double"
-          },
-          "walletId": {
-            "type": "string",
-            "nullable": true
-          },
-          "wallet": {
-            "$ref": "#/components/schemas/Wallet"
-          },
-          "externalOrderId": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "TransactionAcceptDto": {
         "type": "object",
         "properties": {
@@ -1926,66 +1781,6 @@
         },
         "additionalProperties": false
       },
-      "User": {
-        "type": "object",
-        "properties": {
-          "idUser": {
-            "type": "string",
-            "nullable": true
-          },
-          "userType": {
-            "$ref": "#/components/schemas/UserType"
-          },
-          "phoneNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "passwordHash": {
-            "type": "string",
-            "nullable": true
-          },
-          "firstName": {
-            "type": "string",
-            "nullable": true
-          },
-          "lastName": {
-            "type": "string",
-            "nullable": true
-          },
-          "projectName": {
-            "type": "string",
-            "nullable": true
-          },
-          "profilePhotoUrl": {
-            "type": "string",
-            "nullable": true
-          },
-          "refreshToken": {
-            "type": "string",
-            "nullable": true
-          },
-          "refreshTokenExpiryTime": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "wallet": {
-            "$ref": "#/components/schemas/Wallet"
-          },
-          "complaints": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Complaint"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "UserLoginDto": {
         "type": "object",
         "properties": {
@@ -1994,6 +1789,37 @@
             "nullable": true
           },
           "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserRegistrationDto": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "userType": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
             "type": "string",
             "nullable": true
           }
@@ -2028,54 +1854,6 @@
           "email": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "UserType": {
-        "enum": [
-          0,
-          1,
-          2
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
-      "Wallet": {
-        "type": "object",
-        "properties": {
-          "walletId": {
-            "type": "string",
-            "nullable": true
-          },
-          "balance": {
-            "type": "number",
-            "format": "double"
-          },
-          "transactionLimit": {
-            "type": "number",
-            "format": "double"
-          },
-          "userId": {
-            "type": "string",
-            "nullable": true
-          },
-          "user": {
-            "$ref": "#/components/schemas/User"
-          },
-          "transactions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Transaction"
-            },
-            "nullable": true
-          },
-          "accountId": {
-            "type": "string",
-            "nullable": true
-          },
-          "accounting": {
-            "$ref": "#/components/schemas/Accounting"
           }
         },
         "additionalProperties": false
@@ -2165,29 +1943,6 @@
           "transactionLimit": {
             "type": "number",
             "format": "double",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "WeatherForecast": {
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "summary": {
-            "type": "string",
             "nullable": true
           }
         },

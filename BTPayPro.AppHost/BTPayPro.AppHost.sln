@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTPayPro", "..\BTPayPro\BTP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTPayPro.WebUI", "..\BTPayPro.WebUI\BTPayPro.WebUI.csproj", "{71C7B65A-1A30-D743-529E-7665631AF31B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTPayPro.Tests", "..\BTPayPro.Tests\BTPayPro.Tests.csproj", "{297FAB16-C8C7-4C3D-9C21-70C070DCB653}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{71C7B65A-1A30-D743-529E-7665631AF31B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71C7B65A-1A30-D743-529E-7665631AF31B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71C7B65A-1A30-D743-529E-7665631AF31B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{297FAB16-C8C7-4C3D-9C21-70C070DCB653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{297FAB16-C8C7-4C3D-9C21-70C070DCB653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{297FAB16-C8C7-4C3D-9C21-70C070DCB653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{297FAB16-C8C7-4C3D-9C21-70C070DCB653}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

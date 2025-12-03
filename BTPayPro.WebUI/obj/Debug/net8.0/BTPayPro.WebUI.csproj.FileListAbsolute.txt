@@ -13,6 +13,7 @@ C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.WebUI\obj\Debug\net8.0\BTPayP
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.WebUI\obj\Debug\net8.0\BTPayPro.WebUI.AssemblyInfo.cs
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.WebUI\obj\Debug\net8.0\BTPayPro.WebUI.csproj.CoreCompileInputs.cache
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.WebUI\obj\Debug\net8.0\BTPayPro.WebUI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.WebUI\obj\Debug\net8.0\BTPayPro.WebUI.sourcelink.json
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.WebUI\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.WebUI\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro.WebUI\obj\Debug\net8.0\staticwebassets\msbuild.BTPayPro.WebUI.Microsoft.AspNetCore.StaticWebAssets.props

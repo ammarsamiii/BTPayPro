@@ -12,6 +12,7 @@ namespace BTPayPro.Api.Controllers
     {
         private readonly CPMPayParser _parsingService;
         private readonly CPMPayReportGenerator _reportGenerator;
+
         public CPMPayController(CPMPayParser parsingService, CPMPayReportGenerator reportGenerator)
         {
             _parsingService = parsingService;

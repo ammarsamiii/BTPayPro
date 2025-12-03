@@ -167,7 +167,6 @@ C:\Users\Asus\Desktop\BTPayPro\obj\Debug\net8.0\refint\BTPayPro.dll
 C:\Users\Asus\Desktop\BTPayPro\obj\Debug\net8.0\BTPayPro.pdb
 C:\Users\Asus\Desktop\BTPayPro\obj\Debug\net8.0\BTPayPro.genruntimeconfig.cache
 C:\Users\Asus\Desktop\BTPayPro\obj\Debug\net8.0\ref\BTPayPro.dll
-C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro\bin\Debug\net8.0\appsettings.json
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro\bin\Debug\net8.0\BTPayPro.exe
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro\bin\Debug\net8.0\BTPayPro.deps.json
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro\bin\Debug\net8.0\BTPayPro.runtimeconfig.json
@@ -337,6 +336,7 @@ C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro\obj\Debug\net8.0\BTPayPro.Ass
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro\obj\Debug\net8.0\BTPayPro.csproj.CoreCompileInputs.cache
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro\obj\Debug\net8.0\BTPayPro.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro\obj\Debug\net8.0\BTPayPro.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro\obj\Debug\net8.0\BTPayPro.sourcelink.json
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Asus\source\repos\BTPayProAspire\BTPayPro\obj\Debug\net8.0\staticwebassets\msbuild.BTPayPro.Microsoft.AspNetCore.StaticWebAssets.props

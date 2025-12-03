@@ -22,19 +22,23 @@ namespace BTPayPro.Api.Controllers
         }
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] User dto)
+        public IActionResult Register([FromBody] UserRegistrationDto dto)
         {
-            bool emailExists = _dbContext.Users.Any(u => u.Email == dto.Email);
-
-            //if (_dbContext.Users.Any(u => u.Email == dto.Email))
-            //  return BadRequest("Email already exists");
-            if (emailExists)
-            {
+            if (_dbContext.Users.Any(u => u.Email == dto.Email))
                 return BadRequest("Email already exists");
-            }
-            // Hash the password before saving
-            dto.PasswordHash = PasswordHasher.HashPassword(dto.PasswordHash);
-            _dbContext.Users.Add(dto);
+
+            var user = new User
+            {
+                IdUser = Guid.NewGuid().ToString(),
+                PhoneNumber = dto.Username,
+                Email = dto.Email,
+                FirstName = dto.FirstName,
+                LastName = dto.LastName,
+                UserType = (UserType)dto.UserType,
+                PasswordHash = PasswordHasher.HashPassword(dto.Password)
+            };
+
+            _dbContext.Users.Add(user);
             _dbContext.SaveChanges();
 
             return Ok("User registered successfully");

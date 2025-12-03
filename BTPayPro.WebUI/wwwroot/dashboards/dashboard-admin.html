@@ -33,7 +33,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard-admin.html">
                 <div class="sidebar-brand-icon">
-                    <img src="../img/LogoBTPay.png" style="width:80px; height:90px; border-radius:10px;">
+                    <img src="/img/LogoBTPay.png" style="width:80px; height:90px; border-radius:10px;">
                 </div>
                 <div class="sidebar-brand-text mx-3">BTPay<span style="color:#00bfff;">Pro</span></div>
             </a>
@@ -81,8 +81,10 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-            
-            
+            <!-- BT Logo at Bottom -->
+            <li class="sidebar-footer">
+                <img src="/img/BTLogo.png" alt="BT Logo" class="img-fluid" style="filter: none;">
+            </li>
 
         </ul>
 
@@ -150,7 +152,10 @@
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                               
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" onclick="handleLogout(); return false;">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -314,14 +319,6 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-6 mb-4">
-                                            <a href="/admin-users.html" class="btn btn-warning btn-circle btn-lg mx-auto d-block">
-                                                <i class="fas fa-users"></i>
-                                            </a>
-                                            <div class="text-center mt-2">
-                                                <small>Users</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 mb-4">
                                             <a href="/admin-complaints.html" class="btn btn-info btn-circle btn-lg mx-auto d-block">
                                                 <i class="fas fa-ticket-alt"></i>
                                             </a>
@@ -330,33 +327,11 @@
                                             </div>
                                         </div>
                                         <div class="col-6 mb-4">
-                                            <a href="#" class="btn btn-success btn-circle btn-lg mx-auto d-block">
-                                                <i class="fas fa-chart-line"></i>
+                                            <a href="/admin-users.html" class="btn btn-success btn-circle btn-lg mx-auto d-block">
+                                                <i class="fas fa-users"></i>
                                             </a>
                                             <div class="text-center mt-2">
-                                                <small>Reports</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 mb-4">
-                                            <a href="#" class="btn btn-primary btn-circle btn-lg mx-auto d-block">
-                                                <i class="fas fa-cog"></i>
-                                            </a>
-                                           
-                                        </div>
-                                        <div class="col-6 mb-4">
-                                            <a href="#" class="btn btn-danger btn-circle btn-lg mx-auto d-block">
-                                                <i class="fas fa-shield-alt"></i>
-                                            </a>
-                                            <div class="text-center mt-2">
-                                                <small>Security</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 mb-4">
-                                            <a href="#" class="btn btn-secondary btn-circle btn-lg mx-auto d-block">
-                                                <i class="fas fa-database"></i>
-                                            </a>
-                                            <div class="text-center mt-2">
-                                                <small>Backup</small>
+                                                <small>Users</small>
                                             </div>
                                         </div>
                                     </div>
@@ -368,76 +343,7 @@
                     <!-- Content Row -->
                     <div class="row">
 
-                        <!-- System Alerts -->
-                        <div class="col-lg-6 mb-4">
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">System Alerts</h6>
-                                    <div class="dropdown no-arrow">
-                                        <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" id="alertsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-bell"></i> View All
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="alertsDropdown">
-                                            <a class="dropdown-item" href="#">Critical Alerts</a>
-                                            <a class="dropdown-item" href="#">Warning Alerts</a>
-                                            <a class="dropdown-item" href="#">Info Alerts</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Clear All Alerts</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="list-group">
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-1">
-                                                    <i class="fas fa-exclamation-triangle text-warning"></i>
-                                                </div>
-                                                <div class="col-9">
-                                                    <div class="text-gray-800 small font-weight-bold">High CPU Usage Detected</div>
-                                                    <div class="text-gray-600 small">CPU usage exceeded 80% for 5 minutes</div>
-                                                </div>
-                                                <div class="col-2 text-right">
-                                                    <span class="small text-gray-500">2m ago</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-1">
-                                                    <i class="fas fa-exclamation-circle text-danger"></i>
-                                                </div>
-                                                <div class="col-9">
-                                                    <div class="text-gray-800 small font-weight-bold">Database Connection Issue</div>
-                                                    <div class="text-gray-600 small">Intermittent connection failures detected</div>
-                                                </div>
-                                                <div class="col-2 text-right">
-                                                    <span class="small text-gray-500">15m ago</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-1">
-                                                    <i class="fas fa-info-circle text-info"></i>
-                                                </div>
-                                                <div class="col-9">
-                                                    <div class="text-gray-800 small font-weight-bold">New User Registration</div>
-                                                    <div class="text-gray-600 small">New user 'Alice Cooper' registered</div>
-                                                </div>
-                                                <div class="col-2 text-right">
-                                                    <span class="small text-gray-500">1h ago</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Content Row -->
-                    <div class="row">
 
                         <!-- System Overview -->
                         <div class="col-lg-6 mb-4">
@@ -483,7 +389,7 @@
                                                     <th>Name</th>
                                                     <th>Email</th>
                                                     <th>Type</th>
-                                                    <th>Date</th>
+                                                    <th>User ID</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="recentUsersBody">
@@ -501,376 +407,709 @@
                     <!-- Content Row -->
                     <div class="row">
 
-                        <!-- BTPayPro Admin Features -->
-                        <div class="col-lg-6 mb-4">
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Admin Features</h6>
-                                </div>
-                                <div class="card-body">
-                                    <ul>
-                                        <li>User account management</li>
-                                        <li>Transaction monitoring</li>
-                                        <li>Complaint resolution</li>
-                                        <li>System performance tracking</li>
-                                        <li>Financial reporting</li>
-                                        <li>Security management</li>
-                                        <li>Access control and permissions</li>
-                                        <li>Audit logging</li>
-                                        <li>System backup and recovery</li>
-                                        <li>Real-time monitoring and alerts</li>
-                                    </ul>
-                                    <div class="text-center mt-3">
-                                        <a href="#" class="btn btn-info btn-icon-split">
-                                            <span class="icon text-white-50">
-                                                <i class="fas fa-info-circle"></i>
-                                            </span>
-                                            <span class="text">System Documentation</span>
-                                        </a>
+
+
+                        <!-- Parsing Services -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">Parsing Services</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Upload transaction files from Autmpay and CPMPay services to generate accounting reports.</p>
+                                        <p class="text-muted">Note: These services are only available to administrators.</p>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="card h-100">
+                                                    <div class="card-body text-center">
+                                                        <h5 class="card-title">Autmpay Parser</h5>
+                                                        <p class="card-text">Process Autmpay service to generate accounting reports.</p>
+                                                        <button class="btn btn-primary" onclick="processAutmpayFile()">
+                                                            <i class="fas fa-file-upload"></i> Upload Autmpay File
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="card h-100">
+                                                    <div class="card-body text-center">
+                                                        <h5 class="card-title">CPMPay Parser</h5>
+                                                        <p class="card-text">Process CPMPay service to generate accounting reports.</p>
+                                                        <button class="btn btn-success" onclick="processCPMPayFile()">
+                                                            <i class="fas fa-file-upload"></i> Upload CPMPay File
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="parsingStatus" class="mt-3"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
+                    <!-- /.container-fluid -->
 
                 </div>
-                <!-- /.container-fluid -->
+                <!-- End of Main Content -->
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; BTPayPro 2024</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
 
             </div>
-            <!-- End of Main Content -->
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; BTPayPro 2024</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+            <!-- End of Content Wrapper -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Page Wrapper -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
-    </div>
-    <!-- End of Page Wrapper -->
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-primary" onclick="handleLogout()">Logout</button>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-primary" onclick="handleLogout()">Logout</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="../vendor/jquery/jquery.min.js"></script>
+        <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="../js/sb-admin-2.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="../js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="../vendor/chart.js/Chart.min.js"></script>
+        <!-- Page level plugins -->
+        <script src="../vendor/chart.js/Chart.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="../js/demo/chart-area-demo.js"></script>
-    <script src="../js/demo/chart-pie-demo.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="../js/demo/chart-area-demo.js"></script>
+        <script src="../js/demo/chart-pie-demo.js"></script>
 
-    <!-- Configuration -->
-    <script src="../js/config.js"></script>
+        <!-- Configuration -->
+        <script src="../js/config.js"></script>
 
-    <!-- Authentication script -->
-    <script src="../js/auth.js"></script>
+        <!-- Authentication script -->
+        <script src="../js/auth.js"></script>
 
-    <!-- Notifications script -->
-    <script src="../js/notifications.js"></script>
-    <script>
-        // Initialize user info on page load
-        document.addEventListener('DOMContentLoaded', async function () {
-            // Protect this page - redirect to login if not authenticated
-            protectPage();
+        <!-- Notifications script -->
+        <script src="../js/notifications.js"></script>
 
-            // Update user name display
-            const userNameElement = document.getElementById('userNameDisplay');
-            if (userNameElement) {
-                userNameElement.textContent = getUserName();
+        <script>
+            // Initialize user info on page load
+            document.addEventListener('DOMContentLoaded', async function () {
+                // Protect this page - redirect to login if not authenticated
+                protectPage();
+
+                // Update user name display
+                const userNameElement = document.getElementById('userNameDisplay');
+                if (userNameElement) {
+                    userNameElement.textContent = getUserName();
+                }
+
+                // Update profile photo
+                await fetchProfilePhoto();
+                updateTopbarProfilePhoto();
+
+                // Update dashboard with real system data
+                await updateAdminDashboardData();
+            });
+
+            // Update admin dashboard with real system data
+            async function updateAdminDashboardData() {
+                try {
+                    // Load system overview data from API
+                    await loadSystemOverview();
+
+                    // Load recent complaints
+                    await loadRecentComplaints();
+
+                    // Load recent user registrations
+                    await loadRecentUserRegistrations();
+                } catch (error) {
+                    console.error('Error updating dashboard data:', error);
+                }
             }
 
-            // Update profile photo
-            await fetchProfilePhoto();
-            updateTopbarProfilePhoto();
+            // Load system overview data from API
+            async function loadSystemOverview() {
+                try {
+                    let totalUsers = 0, clientCount = 0, merchantCount = 0, adminCount = 0;
+                    let totalTransactions = 0;
+                    let activeWallets = 0;
+                    let pendingComplaints = 0;
 
-            // Update dashboard with real system data
-            await updateAdminDashboardData();
-        });
+                    // Try to fetch user statistics
+                    try {
+                        const usersResponse = await authenticatedFetch(`${AppConfig.API_BASE_URL}/User`);
+                        if (usersResponse && usersResponse.ok) {
+                            const users = await usersResponse.json();
+                            totalUsers = users.length;
 
-        // Update admin dashboard with real system data
-        async function updateAdminDashboardData() {
-            try {
-                // Load system overview data from API
-                await loadSystemOverview();
+                            // Count user types
+                            users.forEach(user => {
+                                // Handle different possible property names for user type
+                                const userType = user.userType || user.UserType || 'Unknown';
+                                switch (userType) {
+                                    case 'Client':
+                                    case '0':
+                                        clientCount++;
+                                        break;
+                                    case 'Merchant':
+                                    case '1':
+                                        merchantCount++;
+                                        break;
+                                    case 'Admin':
+                                    case '2':
+                                        adminCount++;
+                                        break;
+                                }
+                            });
+                        } else {
+                            console.log('User endpoint not available');
+                        }
+                    } catch (error) {
+                        console.log('User endpoint not available:', error);
+                    }
 
-                // Load recent complaints
-                await loadRecentComplaints();
+                    // Try to fetch transaction statistics
+                    try {
+                        const transactionsResponse = await authenticatedFetch(`${AppConfig.API_BASE_URL}/Transaction`);
+                        if (transactionsResponse && transactionsResponse.ok) {
+                            const transactions = await transactionsResponse.json();
+                            totalTransactions = transactions.length;
+                        } else {
+                            console.log('Transaction endpoint not available');
+                        }
+                    } catch (error) {
+                        console.log('Transaction endpoint not available:', error);
+                    }
 
-                // Load recent user registrations
-                await loadRecentUserRegistrations();
-            } catch (error) {
-                console.error('Error updating dashboard data:', error);
+                    // Try to fetch wallet statistics
+                    try {
+                        const walletsResponse = await authenticatedFetch(`${AppConfig.API_BASE_URL}/Wallet`);
+                        if (walletsResponse && walletsResponse.ok) {
+                            const wallets = await walletsResponse.json();
+                            activeWallets = wallets.length;
+                        } else {
+                            console.log('Wallet endpoint not available');
+                        }
+                    } catch (error) {
+                        console.log('Wallet endpoint not available:', error);
+                    }
+
+                    // Try to fetch complaints statistics
+                    try {
+                        const complaintsResponse = await authenticatedFetch(`${AppConfig.API_BASE_URL}/Complaint/all`);
+                        if (complaintsResponse && complaintsResponse.ok) {
+                            const complaints = await complaintsResponse.json();
+                            pendingComplaints = complaints.filter(c => (c.complaintStatus || c.ComplaintStatus) === 'Pending').length;
+                        } else {
+                            console.log('Complaint/all endpoint not available');
+                        }
+                    } catch (error) {
+                        console.log('Complaint/all endpoint not available:', error);
+                    }
+
+                    // Update user counts
+                    document.getElementById('totalUsers').textContent = totalUsers || '0';
+                    document.getElementById('clientCount').textContent = clientCount || '0';
+                    document.getElementById('merchantCount').textContent = merchantCount || '0';
+                    document.getElementById('adminCount').textContent = adminCount || '0';
+
+                    // Update transaction data
+                    document.getElementById('totalTransactions').textContent = totalTransactions || '0';
+                    document.getElementById('activeWallets').textContent = activeWallets || '0';
+                    document.getElementById('pendingTransfers').textContent = '0';
+
+                    // Update complaints data
+                    document.getElementById('pendingComplaints').textContent = pendingComplaints || '0';
+
+                    // Set system uptime
+                    document.getElementById('systemUptime').textContent = 'N/A';
+
+                    // Load recent activity
+                    loadRecentActivity();
+                } catch (error) {
+                    console.error('Error loading system overview:', error);
+                    // Show error state
+                    showErrorState();
+                }
             }
-        }
 
-        // Load system overview data from API
-        async function loadSystemOverview() {
-            try {
-                let totalUsers = 0, clientCount = 0, merchantCount = 0, adminCount = 0;
-                let totalTransactions = 0;
-                let activeWallets = 0;
-                let pendingComplaints = 0;
-
-                // Try to fetch user statistics
-                try {
-                    const usersResponse = await authenticatedFetch(`${AppConfig.API_BASE_URL}/User`);
-                    if (usersResponse && usersResponse.ok) {
-                        const users = await usersResponse.json();
-                        totalUsers = users.length;
-
-                        // Count user types
-                        users.forEach(user => {
-                            const userType = user.userType || 'Unknown';
-                            switch (userType) {
-                                case 'Client':
-                                    clientCount++;
-                                    break;
-                                case 'Merchant':
-                                    merchantCount++;
-                                    break;
-                                case 'Admin':
-                                    adminCount++;
-                                    break;
-                            }
-                        });
-                    } else {
-                        console.log('User endpoint not available');
-                    }
-                } catch (error) {
-                    console.log('User endpoint not available:', error);
-                }
-
-                // Try to fetch transaction statistics
-                try {
-                    const transactionsResponse = await authenticatedFetch(`${AppConfig.API_BASE_URL}/Transaction`);
-                    if (transactionsResponse && transactionsResponse.ok) {
-                        const transactions = await transactionsResponse.json();
-                        totalTransactions = transactions.length;
-                    } else {
-                        console.log('Transaction endpoint not available');
-                    }
-                } catch (error) {
-                    console.log('Transaction endpoint not available:', error);
-                }
-
-                // Try to fetch wallet statistics
-                try {
-                    const walletsResponse = await authenticatedFetch(`${AppConfig.API_BASE_URL}/Wallet`);
-                    if (walletsResponse && walletsResponse.ok) {
-                        const wallets = await walletsResponse.json();
-                        activeWallets = wallets.length;
-                    } else {
-                        console.log('Wallet endpoint not available');
-                    }
-                } catch (error) {
-                    console.log('Wallet endpoint not available:', error);
-                }
-
-                // Try to fetch complaints statistics
-                try {
-                    const complaintsResponse = await authenticatedFetch(`${AppConfig.API_BASE_URL}/Complaint/all`);
-                    if (complaintsResponse && complaintsResponse.ok) {
-                        const complaints = await complaintsResponse.json();
-                        pendingComplaints = complaints.filter(c => c.complaintStatus === 'Pending').length;
-                    } else {
-                        console.log('Complaint/all endpoint not available');
-                    }
-                } catch (error) {
-                    console.log('Complaint/all endpoint not available:', error);
-                }
-
+            // Show error state when real data cannot be fetched
+            function showErrorState() {
                 // Update user counts
-                document.getElementById('totalUsers').textContent = totalUsers || '0';
-                document.getElementById('clientCount').textContent = clientCount || '0';
-                document.getElementById('merchantCount').textContent = merchantCount || '0';
-                document.getElementById('adminCount').textContent = adminCount || '0';
+                document.getElementById('totalUsers').textContent = '0';
+                document.getElementById('clientCount').textContent = '0';
+                document.getElementById('merchantCount').textContent = '0';
+                document.getElementById('adminCount').textContent = '0';
 
                 // Update transaction data
-                document.getElementById('totalTransactions').textContent = totalTransactions || '0';
-                document.getElementById('activeWallets').textContent = activeWallets || '0';
+                document.getElementById('totalTransactions').textContent = '0';
+                document.getElementById('activeWallets').textContent = '0';
                 document.getElementById('pendingTransfers').textContent = '0';
 
                 // Update complaints data
-                document.getElementById('pendingComplaints').textContent = pendingComplaints || '0';
+                document.getElementById('pendingComplaints').textContent = '0';
 
                 // Set system uptime
                 document.getElementById('systemUptime').textContent = 'N/A';
 
                 // Load recent activity
                 loadRecentActivity();
-            } catch (error) {
-                console.error('Error loading system overview:', error);
-                // Show error state
-                showErrorState();
             }
-        }
-
-        // Show error state when real data cannot be fetched
-        function showErrorState() {
-            // Update user counts
-            document.getElementById('totalUsers').textContent = '0';
-            document.getElementById('clientCount').textContent = '0';
-            document.getElementById('merchantCount').textContent = '0';
-            document.getElementById('adminCount').textContent = '0';
-
-            // Update transaction data
-            document.getElementById('totalTransactions').textContent = '0';
-            document.getElementById('activeWallets').textContent = '0';
-            document.getElementById('pendingTransfers').textContent = '0';
-
-            // Update complaints data
-            document.getElementById('pendingComplaints').textContent = '0';
-
-            // Set system uptime
-            document.getElementById('systemUptime').textContent = 'N/A';
 
             // Load recent activity
-            loadRecentActivity();
-        }
+            function loadRecentActivity() {
+                const activityContainer = document.getElementById('recentActivity');
 
-        // Load recent activity
-        function loadRecentActivity() {
-            const activityContainer = document.getElementById('recentActivity');
+                activityContainer.innerHTML = `
+                                                    <div class="text-center text-muted py-4">
+                                                        <i class="fas fa-info-circle fa-3x mb-3"></i>
+                                                        <p>Activity data not available</p>
+                                                    </div>
+                                                `;
+            }
 
-            activityContainer.innerHTML = `
-                    <div class="text-center text-muted py-4">
-                        <i class="fas fa-info-circle fa-3x mb-3"></i>
-                        <p>Activity data not available</p>
-                    </div>
-                `;
-        }
+            // Load recent complaints
+            async function loadRecentComplaints() {
+                try {
+                    const response = await authenticatedFetch(`${AppConfig.API_BASE_URL}/Complaint/all`);
 
-        // Load recent complaints
-        async function loadRecentComplaints() {
-            try {
-                const response = await authenticatedFetch(`${AppConfig.API_BASE_URL}/Complaint/all`);
+                    if (response && response.ok) {
+                        const complaints = await response.json();
 
-                if (response && response.ok) {
-                    const complaints = await response.json();
+                        // Sort by date and get the 5 most recent
+                        const recentComplaints = complaints
+                            .sort((a, b) => new Date(b.dateComplaint || b.DateComplaint) - new Date(a.dateComplaint || a.DateComplaint))
+                            .slice(0, 5);
 
-                    // Sort by date and get the 5 most recent
-                    const recentComplaints = complaints
-                        .sort((a, b) => new Date(b.dateComplaint) - new Date(a.dateComplaint))
-                        .slice(0, 5);
+                        const tbody = document.getElementById('recentComplaintsBody');
+                        tbody.innerHTML = recentComplaints.map(c => {
+                            // Format date
+                            const dateObj = new Date(c.dateComplaint || c.DateComplaint);
+                            const formattedDate = dateObj.toLocaleDateString();
 
-                    const tbody = document.getElementById('recentComplaintsBody');
-                    tbody.innerHTML = recentComplaints.map(c => {
-                        // Format date
-                        const dateObj = new Date(c.dateComplaint);
-                        const formattedDate = dateObj.toLocaleDateString();
+                            // Status badge
+                            const status = c.complaintStatus || c.ComplaintStatus || 'Unknown';
+                            const statusMap = {
+                                'Pending': 'warning',
+                                'In Progress': 'primary',
+                                'Done': 'success',
+                                'Closed': 'secondary'
+                            };
+                            const badgeClass = statusMap[status] || 'secondary';
+                            const statusBadge = `<span class="badge badge-${badgeClass}">${status}</span>`;
 
-                        // Status badge
-                        const statusMap = {
-                            'Pending': 'warning',
-                            'In Progress': 'primary',
-                            'Done': 'success',
-                            'Closed': 'secondary'
-                        };
-                        const badgeClass = statusMap[c.complaintStatus] || 'secondary';
-                        const statusBadge = `<span class="badge badge-${badgeClass}">${c.complaintStatus}</span>`;
-
-                        return `
-                            <tr>
-                                <td>${formattedDate}</td>
-                                <td>${c.userName || 'Unknown'}</td>
-                                <td>${c.channel || 'Web'}</td>
-                                <td>${statusBadge}</td>
-                            </tr>`;
-                    }).join('');
-                } else {
+                            return `
+                                                            <tr>
+                                                                <td>${formattedDate}</td>
+                                                                <td>${c.userName || c.UserName || 'Unknown'}</td>
+                                                                <td>${c.channel || c.Channel || 'Web'}</td>
+                                                                <td>${statusBadge}</td>
+                                                            </tr>`;
+                        }).join('');
+                    } else {
+                        // Show error state when complaints cannot be loaded
+                        const tbody = document.getElementById('recentComplaintsBody');
+                        tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">Complaint data not available</td></tr>';
+                    }
+                } catch (error) {
+                    console.error('Error loading recent complaints:', error);
                     // Show error state when complaints cannot be loaded
                     const tbody = document.getElementById('recentComplaintsBody');
                     tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">Complaint data not available</td></tr>';
                 }
-            } catch (error) {
-                console.error('Error loading recent complaints:', error);
-                // Show error state when complaints cannot be loaded
-                const tbody = document.getElementById('recentComplaintsBody');
-                tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">Complaint data not available</td></tr>';
             }
-        }
 
-        // Load recent user registrations
-        async function loadRecentUserRegistrations() {
-            try {
-                const response = await authenticatedFetch(`${AppConfig.API_BASE_URL}/User`);
+            // Load recent user registrations
+            async function loadRecentUserRegistrations() {
+                try {
+                    const response = await authenticatedFetch(`${AppConfig.API_BASE_URL}/User`);
 
-                if (response && response.ok) {
-                    const users = await response.json();
+                    if (response && response.ok) {
+                        const users = await response.json();
 
-                    // Sort by user ID (as a proxy for registration date) and get the 5 most recent
-                    const recentUsers = users
-                        .sort((a, b) => b.userId.localeCompare(a.userId))
-                        .slice(0, 5);
+                        // Sort by user ID (as a proxy for registration date) and get the 5 most recent
+                        const recentUsers = users
+                            .sort((a, b) => (b.userId || b.UserId || b.id).localeCompare(a.userId || a.UserId || a.id))
+                            .slice(0, 5);
 
-                    const tbody = document.getElementById('recentUsersBody');
-                    tbody.innerHTML = recentUsers.map(user => {
-                        // Format user type
-                        const typeMap = {
-                            'Client': 'primary',
-                            'Merchant': 'warning',
-                            'Admin': 'danger'
-                        };
-                        const typeClass = typeMap[user.userType] || 'secondary';
-                        const typeBadge = `<span class="badge badge-${typeClass}">${user.userType}</span>`;
+                        const tbody = document.getElementById('recentUsersBody');
+                        tbody.innerHTML = recentUsers.map(user => {
+                            // Format user type
+                            const userType = user.userType || user.UserType || 'Unknown';
+                            const typeMap = {
+                                'Client': 'primary',
+                                'Merchant': 'warning',
+                                'Admin': 'danger'
+                            };
+                            const typeClass = typeMap[userType] || 'secondary';
+                            const typeBadge = `<span class="badge badge-${typeClass}">${userType}</span>`;
 
-                        return `
-                            <tr>
-                                <td>${user.firstName || ''} ${user.lastName || ''}</td>
-                                <td>${user.email || 'N/A'}</td>
-                                <td>${typeBadge}</td>
-                                <td>${user.userId ? user.userId.substring(0, 8) : 'N/A'}</td>
-                            </tr>`;
-                    }).join('');
-                } else {
+                            return `
+                                                            <tr>
+                                                                <td>${user.firstName || user.FirstName || ''} ${user.lastName || user.LastName || ''}</td>
+                                                                <td>${user.email || user.Email || 'N/A'}</td>
+                                                                <td>${typeBadge}</td>
+                                                                <td>${(user.userId || user.UserId || user.id) ? (user.userId || user.UserId || user.id).substring(0, 8) : 'N/A'}</td>
+                                                            </tr>`;
+                        }).join('');
+                    } else {
+                        // Show error state when users cannot be loaded
+                        const tbody = document.getElementById('recentUsersBody');
+                        tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">User data not available</td></tr>';
+                    }
+                } catch (error) {
+                    console.error('Error loading recent user registrations:', error);
                     // Show error state when users cannot be loaded
                     const tbody = document.getElementById('recentUsersBody');
                     tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">User data not available</td></tr>';
                 }
-            } catch (error) {
-                console.error('Error loading recent user registrations:', error);
-                // Show error state when users cannot be loaded
-                const tbody = document.getElementById('recentUsersBody');
-                tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">User data not available</td></tr>';
             }
-        }
-    </script>
+
+            // Process Autmpay file
+            async function processAutmpayFile() {
+                // Check if user is admin (extra safety check)
+                const userType = getUserType();
+                console.log('Current user type:', userType);
+                if (userType !== 'Admin' && userType !== '2') {
+                    showParsingStatus('Access denied. Only administrators can use this feature.', 'danger');
+                    return;
+                }
+
+                showParsingStatus('Please upload your Autmpay file to process...', 'info');
+
+                // Create file input for Autmpay
+                const fileInput = document.createElement('input');
+                fileInput.type = 'file';
+                // Allow any file type to be uploaded to support files without extensions
+                fileInput.accept = '';
+
+                fileInput.onchange = async (event) => {
+                    const file = event.target.files[0];
+                    if (!file) {
+                        showParsingStatus('No file selected', 'warning');
+                        return;
+                    }
+
+                    showParsingStatus('Uploading and processing Autmpay file...', 'info');
+
+                    try {
+                        // Create form data with proper content type
+                        const formData = new FormData();
+                        formData.append('file', file);
+
+                        showParsingStatus('Processing file... Please wait.', 'info');
+
+                        // Send file with admin authentication (proper approach)
+                        const token = getAuthToken();
+                        console.log('Auth token for Autmpay:', token ? 'Present' : 'Missing');
+                        console.log('Token value (first 10 chars):', token ? token.substring(0, 10) + '...' : 'None');
+                        console.log('User type:', getUserType());
+
+                        if (!token) {
+                            showParsingStatus('No authentication token found. Please refresh the page or log in again.', 'danger');
+                            return;
+                        }
+
+                        // Try the request with retry logic for authentication errors
+                        let response = await fetch(`${AppConfig.API_BASE_URL}/Autmpay/upload`, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Authorization': `Bearer ${token}`
+                            }
+                        });
+
+                        // If we get a 401 error, try to refresh the token and retry once
+                        if (response && response.status === 401) {
+                            showParsingStatus('Authentication token expired. Refreshing authentication...', 'info');
+                            // Wait a moment for any token refresh to complete
+                            await new Promise(resolve => setTimeout(resolve, 1000));
+
+                            // Try again with the same token (might have been refreshed)
+                            response = await fetch(`${AppConfig.API_BASE_URL}/Autmpay/upload`, {
+                                method: 'POST',
+                                body: formData,
+                                headers: {
+                                    'Authorization': `Bearer ${token}`
+                                }
+                            });
+                        }
+                        console.log('Autmpay upload response:', response);
+
+                        if (response && response.ok) {
+                            try {
+                                // Get the file content and create download
+                                const blob = await response.blob();
+
+                                // Ensure we're handling CSV content properly
+                                const csvBlob = new Blob([blob], { type: 'text/csv' });
+
+                                // Create a temporary URL for the blob
+                                const url = window.URL.createObjectURL(csvBlob);
+
+                                // Create a temporary anchor element
+                                const a = document.createElement('a');
+                                a.style.display = 'none';
+                                a.href = url;
+
+                                // Set the filename
+                                let filename = `Autmpay_Report_Admin_${new Date().toISOString().slice(0, 10)}.csv`;
+                                const contentDisposition = response.headers.get('content-disposition');
+                                if (contentDisposition) {
+                                    const filenameMatch = contentDisposition.match(/filename="?([^";]+)"?/);
+                                    if (filenameMatch && filenameMatch[1]) {
+                                        filename = filenameMatch[1];
+                                    }
+                                }
+                                a.download = filename;
+
+                                // Append to the document, click, and remove
+                                document.body.appendChild(a);
+                                a.click();
+                                document.body.removeChild(a);
+
+                                // Clean up the URL object
+                                window.URL.revokeObjectURL(url);
+
+                                showParsingStatus('Autmpay report generated and downloaded successfully!', 'success');
+                            } catch (downloadError) {
+                                console.error('Error during download:', downloadError);
+                                // Fallback: try to open in new tab
+                                try {
+                                    const blob = await response.blob();
+                                    const url = window.URL.createObjectURL(blob);
+                                    window.open(url, '_blank');
+                                    showParsingStatus('Autmpay report opened in new tab. Please save it manually.', 'warning');
+                                } catch (fallbackError) {
+                                    console.error('Fallback download also failed:', fallbackError);
+                                    showParsingStatus('Error generating Autmpay report. Please check console for details.', 'danger');
+                                }
+                            }
+                        } else {
+                            let errorText = 'Unknown error';
+                            try {
+                                errorText = await response.text();
+                            } catch (e) {
+                                errorText = `HTTP Error: ${response.status} ${response.statusText}`;
+                            }
+
+                            // Handle authentication errors specifically
+                            if (response.status === 401) {
+                                showParsingStatus('Authentication required for Autmpay service. Since you\'re already logged in as admin, please try refreshing the page to get a new authentication token. <button class="btn btn-sm btn-primary btn-refresh" onclick="location.reload()">Refresh Page</button>', 'warning');
+                            } else {
+                                showParsingStatus('Error processing Autmpay file: ' + errorText, 'danger');
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Error processing Autmpay file:', error);
+                        showParsingStatus('Error processing Autmpay file: ' + error.message, 'danger');
+                    }
+                };
+
+                fileInput.click();
+            }
+
+            // Process CPMPay file
+            async function processCPMPayFile() {
+                // Check if user is admin (extra safety check)
+                const userType = getUserType();
+                console.log('Current user type:', userType);
+                if (userType !== 'Admin' && userType !== '2') {
+                    showParsingStatus('Access denied. Only administrators can use this feature.', 'danger');
+                    return;
+                }
+
+                showParsingStatus('Please upload your CPMPay file to process...', 'info');
+
+                // Create file input for CPMPay
+                const fileInput = document.createElement('input');
+                fileInput.type = 'file';
+                // Allow any file type to be uploaded to support files without extensions
+                fileInput.accept = '';
+
+                fileInput.onchange = async (event) => {
+                    const file = event.target.files[0];
+                    if (!file) {
+                        showParsingStatus('No file selected', 'warning');
+                        return;
+                    }
+
+                    showParsingStatus('Uploading and processing CPMPay file...', 'info');
+
+                    try {
+                        // Create form data with proper content type
+                        const formData = new FormData();
+                        formData.append('file', file);
+
+                        showParsingStatus('Processing file... Please wait.', 'info');
+
+                        // Send file with admin authentication (proper approach)
+                        const token = getAuthToken();
+                        console.log('Auth token for CPMPay:', token ? 'Present' : 'Missing');
+                        console.log('Token value (first 10 chars):', token ? token.substring(0, 10) + '...' : 'None');
+                        console.log('User type:', getUserType());
+
+                        if (!token) {
+                            showParsingStatus('No authentication token found. Please refresh the page or log in again.', 'danger');
+                            return;
+                        }
+
+                        // Try the request with retry logic for authentication errors
+                        let response = await fetch(`${AppConfig.API_BASE_URL}/CPMPay/ParseCpmpayFile`, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Authorization': `Bearer ${token}`
+                            }
+                        });
+
+                        // If we get a 401 error, try to refresh the token and retry once
+                        if (response && response.status === 401) {
+                            showParsingStatus('Authentication token expired. Refreshing authentication...', 'info');
+                            // Wait a moment for any token refresh to complete
+                            await new Promise(resolve => setTimeout(resolve, 1000));
+
+                            // Try again with the same token (might have been refreshed)
+                            response = await fetch(`${AppConfig.API_BASE_URL}/CPMPay/ParseCpmpayFile`, {
+                                method: 'POST',
+                                body: formData,
+                                headers: {
+                                    'Authorization': `Bearer ${token}`
+                                }
+                            });
+                        }
+                        console.log('CPMPay upload response:', response);
+
+                        if (response && response.ok) {
+                            try {
+                                // Get the file content and create download
+                                const blob = await response.blob();
+
+                                // Ensure we're handling CSV content properly
+                                const csvBlob = new Blob([blob], { type: 'text/csv' });
+
+                                // Create a temporary URL for the blob
+                                const url = window.URL.createObjectURL(csvBlob);
+
+                                // Create a temporary anchor element
+                                const a = document.createElement('a');
+                                a.style.display = 'none';
+                                a.href = url;
+
+                                // Set the filename
+                                let filename = `CPMPay_Report_Admin_${new Date().toISOString().slice(0, 10)}.csv`;
+                                const contentDisposition = response.headers.get('content-disposition');
+                                if (contentDisposition) {
+                                    const filenameMatch = contentDisposition.match(/filename="?([^";]+)"?/);
+                                    if (filenameMatch && filenameMatch[1]) {
+                                        filename = filenameMatch[1];
+                                    }
+                                }
+                                a.download = filename;
+
+                                // Append to the document, click, and remove
+                                document.body.appendChild(a);
+                                a.click();
+                                document.body.removeChild(a);
+
+                                // Clean up the URL object
+                                window.URL.revokeObjectURL(url);
+
+                                showParsingStatus('CPMPay report generated and downloaded successfully!', 'success');
+                            } catch (downloadError) {
+                                console.error('Error during download:', downloadError);
+                                // Fallback: try to open in new tab
+                                try {
+                                    const blob = await response.blob();
+                                    const url = window.URL.createObjectURL(blob);
+                                    window.open(url, '_blank');
+                                    showParsingStatus('CPMPay report opened in new tab. Please save it manually.', 'warning');
+                                } catch (fallbackError) {
+                                    console.error('Fallback download also failed:', fallbackError);
+                                    showParsingStatus('Error generating CPMPay report. Please check console for details.', 'danger');
+                                }
+                            }
+                        } else {
+                            let errorText = 'Unknown error';
+                            try {
+                                errorText = await response.text();
+                            } catch (e) {
+                                errorText = `HTTP Error: ${response.status} ${response.statusText}`;
+                            }
+
+                            // Handle authentication errors specifically
+                            if (response.status === 401) {
+                                showParsingStatus('Authentication required for CPMPay service. Since you\'re already logged in as admin, please try refreshing the page to get a new authentication token. <button class="btn btn-sm btn-primary btn-refresh" onclick="location.reload()">Refresh Page</button>', 'warning');
+                            } else {
+                                showParsingStatus('Error processing CPMPay file: ' + errorText, 'danger');
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Error processing CPMPay file:', error);
+                        showParsingStatus('Error processing CPMPay file: ' + error.message, 'danger');
+                    }
+                };
+
+                fileInput.click();
+            }
+
+            // Show parsing status message
+            function showParsingStatus(message, type) {
+                const statusDiv = document.getElementById('parsingStatus');
+                if (statusDiv) {
+                    // Escape HTML to prevent XSS, but allow our button
+                    const escapedMessage = message
+                        .replace(/&/g, '&amp;')
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;')
+                        .replace(/"/g, '&quot;')
+                        .replace(/'/g, '&#039;')
+                        .replace(/&lt;button/g, '<button')
+                        .replace(/&quot;btn btn-sm btn-primary btn-refresh&quot;/g, '"btn btn-sm btn-primary btn-refresh"')
+                        .replace(/&gt;&lt;\/button&gt;/g, '></button>');
+
+                    statusDiv.innerHTML = `
+                                    <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                                        ${escapedMessage}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                `;
+                }
+            }
+        </script>
 
 </body>
 
